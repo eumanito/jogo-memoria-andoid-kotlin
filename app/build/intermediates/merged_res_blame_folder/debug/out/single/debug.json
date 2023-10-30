@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xhdpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xhdpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xhdpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xhdpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/layout_activity_signup.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xhdpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xhdpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v21_baseline_lock_24.xml.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v21/baseline_lock_24.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-ldpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-ldpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v21_baseline_email_24.xml.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v21/baseline_email_24.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-hdpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-hdpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-ldpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-ldpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-ldpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable_background_login_button.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/drawable/background_login_button.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/layout_activity_login.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-mdpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-mdpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxxhdpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxxhdpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/font_bungee.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/font/bungee.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxhdpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxhdpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxxhdpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxxhdpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable_new_background.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/drawable/new_background.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-hdpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-hdpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v21/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable_background_text.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/drawable/background_text.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-mdpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-mdpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxhdpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxhdpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v21_baseline_person_24.xml.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v21/baseline_person_24.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-hdpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-hdpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-mdpi_baseline_person_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-mdpi/baseline_person_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-ldpi_baseline_lock_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-ldpi/baseline_lock_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxhdpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxhdpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xxxhdpi_baseline_email_24.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xxxhdpi/baseline_email_24.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable_background_button.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/drawable/background_button.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.memorygame.app-pngs-27:/drawable-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memorygame.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    }
+]

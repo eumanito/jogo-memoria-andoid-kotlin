@@ -1,0 +1,4 @@
+#Mon Oct 30 20:03:04 BRT 2023
+base.0=/home/manito/Documentos/Prog_Disp_Mov/jogo-memoria-andoid-kotlin/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
