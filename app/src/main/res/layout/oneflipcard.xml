@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AnimatorActivity">
+
+    <!--Add a textView for front part of the card-->
+    <TextView
+        android:id="@+id/card_back"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="Back Card"
+        android:textSize="22sp"
+        android:background="#A7CB54"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Add a textview for back part of the card-->
+    <TextView
+        android:id="@+id/card_front"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#208D45"
+        android:gravity="center"
+        android:text="Front Card"
+        android:textAlignment="center"
+        android:textColor="#263238"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Add a Button that will apply flip on the card-->
+    <Button
+        android:id="@+id/flip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flip Me"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="380dp"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="559dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

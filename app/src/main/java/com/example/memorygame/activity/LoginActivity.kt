@@ -17,4 +17,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity(it)
         }
     }
+    fun loginAnimator(view: View?) {
+        Intent(this, AnimatorActivity::class.java).also {
+            startActivity(it)
+        }
+    }
+
 }
