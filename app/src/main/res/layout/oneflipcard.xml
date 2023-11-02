@@ -38,19 +38,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--Add a Button that will apply flip on the card-->
-    <Button
-        android:id="@+id/flip_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Flip Me"
-        tools:ignore="MissingConstraints"
-        android:layout_marginTop="380dp"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="559dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
