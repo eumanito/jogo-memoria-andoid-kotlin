@@ -2,6 +2,7 @@ package com.example.memorygame.activity
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,10 +13,11 @@ class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
 
-    lateinit var frontAnimation: AnimatorSet
-    lateinit var backAnimation: AnimatorSet
-    var isFront = true
+    private lateinit var frontAnimation: AnimatorSet
+    private lateinit var backAnimation: AnimatorSet
+    private var isFront = true
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.oneflipcard)
@@ -31,15 +33,16 @@ class AnimatorActivity : AppCompatActivity() {
         frontAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.frontanimator) as AnimatorSet
         backAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.backanimator) as AnimatorSet
 
-        var timeView = findViewById<TextView>(R.id.timeView)
+        findViewById<TextView>(R.id.timeView)
         timeTextView = findViewById(R.id.timeView)
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
 
+        val pointTextView = findViewById<TextView>(R.id.pointTextView)
+        var points = 0
         val flipCard = View.OnClickListener {
             isFront = if (isFront) {
                 // Perform the flip animation from front to back
-
                 frontAnimation.setTarget(cardFront)
                 backAnimation.setTarget(cardBack)
                 frontAnimation.start()
@@ -47,6 +50,10 @@ class AnimatorActivity : AppCompatActivity() {
                 false
             } else {
                 stopwatch.stop()
+
+                points++
+                val pointText = "Point: $points"
+                pointTextView.text = pointText
                 // Perform the flip animation from back to front
                 frontAnimation.setTarget(cardBack)
                 backAnimation.setTarget(cardFront)
