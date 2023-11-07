@@ -8,8 +8,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.memorygame.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 class AnimatorActivity : AppCompatActivity() {
+    private lateinit var textViewActiveUser: TextView
+    private lateinit var textViewLogOut: TextView
+
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
 
@@ -21,6 +27,13 @@ class AnimatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.oneflipcard)
+
+        textViewActiveUser = findViewById(R.id.textViewActiveUser)
+        textViewActiveUser.text = ""
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            textViewActiveUser.text = user.email
+        }
 
         val scale = applicationContext.resources.displayMetrics.density
 

@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memorygame.R
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -25,8 +26,6 @@ class LoginActivity : AppCompatActivity() {
         auth = Firebase.auth
         email = findViewById(R.id.editTextEmailLogin)
         password = findViewById(R.id.editTextPassWordLogin)
-
-        //sair.setOnClickListener(this)
     }
 
     fun signUp(view: View?) {
@@ -56,5 +55,12 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+    }
+
+    fun logOut(v: View?) {
+        Firebase.auth.signOut()
+        Intent(this, LoginActivity::class.java).also {
+            startActivity(it)
+        }
     }
 }
