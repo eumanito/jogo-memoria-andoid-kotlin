@@ -25,12 +25,11 @@ class AnimatorActivity : AppCompatActivity() {
         val scale = applicationContext.resources.displayMetrics.density
 
         val cardFront = findViewById<TextView>(R.id.card_front)
-        val cardBack = findViewById<TextView>(R.id.card_back)
-
         cardFront.cameraDistance = 8000 * scale
-        cardBack.cameraDistance = 8000 * scale
-
         frontAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.frontanimator) as AnimatorSet
+
+        val cardBack = findViewById<TextView>(R.id.card_back)
+        cardBack.cameraDistance = 8000 * scale
         backAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.backanimator) as AnimatorSet
 
         findViewById<TextView>(R.id.timeView)
@@ -40,13 +39,17 @@ class AnimatorActivity : AppCompatActivity() {
 
         val pointTextView = findViewById<TextView>(R.id.pointTextView)
         var points = 0
+
         val flipCard = View.OnClickListener {
             isFront = if (isFront) {
+
                 // Perform the flip animation from front to back
                 frontAnimation.setTarget(cardFront)
                 backAnimation.setTarget(cardBack)
+
                 frontAnimation.start()
                 backAnimation.start()
+
                 false
             } else {
                 stopwatch.stop()
@@ -54,18 +57,20 @@ class AnimatorActivity : AppCompatActivity() {
                 points++
                 val pointText = "Point: $points"
                 pointTextView.text = pointText
+
                 // Perform the flip animation from back to front
                 frontAnimation.setTarget(cardBack)
                 backAnimation.setTarget(cardFront)
+
                 backAnimation.start()
                 frontAnimation.start()
+
                 true
             }
         }
 
         cardFront.setOnClickListener(flipCard)
         cardBack.setOnClickListener(flipCard)
-
     }
 }
 

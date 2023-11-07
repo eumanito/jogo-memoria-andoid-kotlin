@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(
                         baseContext,
                         "Authenticação falhou.",
-                        Toast.LENGTH_SHORT,
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             }
