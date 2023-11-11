@@ -44,16 +44,15 @@
         android:id="@+id/timeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
         android:text="0:00:00"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@id/card_back"
+        app:layout_constraintBottom_toTopOf="@id/card_back1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textSignUp2"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/card_back"
+        android:id="@+id/card_back1"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:textAlignment="center"
@@ -68,7 +67,7 @@
 
     <!--Add a textview for back part of the card-->
     <TextView
-        android:id="@+id/card_front"
+        android:id="@+id/card_front1"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="#208D45"
@@ -86,8 +85,10 @@
         android:id="@+id/pointTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Point: 0"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/card_back1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/timeView" />
