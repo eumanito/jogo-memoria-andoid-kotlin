@@ -1,15 +1,23 @@
 package com.example.memorygame.activity
 
+import android.animation.Animator
 import android.animation.AnimatorInflater
+import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.GridLayout
 import android.widget.TextView
+import android.widget.ViewFlipper
+import androidx.cardview.widget.CardView
 import com.example.memorygame.R
+import com.example.memorygame.R.*
 
 class AnimatorActivity : AppCompatActivity() {
+
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
 
@@ -17,55 +25,124 @@ class AnimatorActivity : AppCompatActivity() {
     private lateinit var backAnimation: AnimatorSet
     private var isFront = true
 
+    private lateinit var gridLayout: GridLayout
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.oneflipcard)
+        setContentView(layout.oneflipcard)
 
-        val scale = applicationContext.resources.displayMetrics.density
-
-        val cardFront = findViewById<TextView>(R.id.card_front)
-        val cardBack = findViewById<TextView>(R.id.card_back)
-
-        cardFront.cameraDistance = 8000 * scale
-        cardBack.cameraDistance = 8000 * scale
-
-        frontAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.frontanimator) as AnimatorSet
-        backAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.backanimator) as AnimatorSet
-
-        findViewById<TextView>(R.id.timeView)
-        timeTextView = findViewById(R.id.timeView)
+        // Initialize views
+        timeTextView = findViewById(id.timeView)
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
 
-        val pointTextView = findViewById<TextView>(R.id.pointTextView)
+        val pointTextView = findViewById<TextView>(id.pointTextView)
         var points = 0
-        val flipCard = View.OnClickListener {
-            isFront = if (isFront) {
-                // Perform the flip animation from front to back
-                frontAnimation.setTarget(cardFront)
-                backAnimation.setTarget(cardBack)
-                frontAnimation.start()
-                backAnimation.start()
-                false
-            } else {
-                stopwatch.stop()
 
-                points++
-                val pointText = "Point: $points"
-                pointTextView.text = pointText
-                // Perform the flip animation from back to front
-                frontAnimation.setTarget(cardBack)
-                backAnimation.setTarget(cardFront)
-                backAnimation.start()
-                frontAnimation.start()
-                true
+        // Initialize the GridLayout
+        gridLayout = findViewById(id.gridLayout)
+
+        // Create card views
+        createCardView("Front Card 1", pointTextView, points)
+        createCardView("Front Card 2", pointTextView, points)
+        createCardView("Front Card 3", pointTextView, points)
+        createCardView("Front Card 4", pointTextView, points)
+    }
+
+    private fun createCardView(cardTitle: String, pointTextView: TextView, points: Int) {
+        // Create a new instance of ViewFlipper
+        val viewFlipper = ViewFlipper(this)
+
+        // Set the width and height to be the same to create a square card
+        val cardSize = resources.getDimensionPixelSize(R.dimen.card_size)
+        val layoutParams = GridLayout.LayoutParams()
+        layoutParams.width = cardSize
+        layoutParams.height = cardSize
+        layoutParams.also { viewFlipper.layoutParams = it }
+
+        // Set up front card
+        val frontCard = CardView(this)
+        frontCard.radius = resources.getDimension(R.dimen.card_corner_radius)
+        frontCard.useCompatPadding = true
+        frontCard.setCardBackgroundColor(Color.parseColor("#263238")) // front card color
+
+        val frontTextView = TextView(this)
+        frontTextView.text = cardTitle
+        frontTextView.textSize = resources.getDimension(R.dimen.card_text_size)
+        frontTextView.setTextColor(Color.WHITE)
+        frontCard.addView(frontTextView)
+
+        // Set up back card
+        val backCard = CardView(this)
+        backCard.radius = resources.getDimension(R.dimen.card_corner_radius)
+        backCard.useCompatPadding = true
+        backCard.setCardBackgroundColor(Color.parseColor("#A7CB54")) // back card color
+        backCard.visibility = View.INVISIBLE // Initially hide the back card
+
+        val backTextView = TextView(this)
+        backTextView.text = "Back of $cardTitle"
+        backTextView.textSize = resources.getDimension(R.dimen.card_text_size)
+        backTextView.setTextColor(Color.WHITE)
+        backCard.addView(backTextView)
+
+        // Add both cards to the ViewFlipper
+        viewFlipper.addView(frontCard)
+        viewFlipper.addView(backCard)
+
+        // Add the ViewFlipper to the GridLayout
+        gridLayout.addView(viewFlipper)
+
+        // Set up flip animation for the ViewFlipper
+        val flipAnimationIn = AnimatorInflater.loadAnimator(
+            applicationContext,
+            R.animator.frontanimator
+        ) as AnimatorSet
+        val flipAnimationOut = AnimatorInflater.loadAnimator(
+            applicationContext,
+            R.animator.backanimator
+        ) as AnimatorSet
+
+        // Initialize the click listener for flipping cards
+        viewFlipper.setOnClickListener {
+            if (viewFlipper.displayedChild == 0) {
+                // Se o cartão da frente for exibido, vire para o cartão de trás
+                frontCard.animate()
+                    .rotationY(180f)
+                    .setDuration(1000)
+                    .withEndAction {
+                        frontCard.visibility = View.INVISIBLE
+                        backCard.visibility = View.VISIBLE
+                        backCard.rotationY = 0f
+                        viewFlipper.displayedChild = 1
+                    }
+            } else {
+                // Se o cartão de trás for exibido, vire para o cartão da frente
+                backCard.animate()
+                    .rotationY(180f)
+                    .setDuration(1000)
+                    .withEndAction {
+                        backCard.visibility = View.INVISIBLE
+                        frontCard.visibility = View.VISIBLE
+                        frontCard.rotationY = 0f
+                        viewFlipper.displayedChild = 0
+                    }
+            }
+
+            // Atualiza a pontuação
+            if (viewFlipper.displayedChild == 1) {
+                val newPoints = points + 1
+                pointTextView.text = "Point: $newPoints"
+            }
+
+            // Pare o cronômetro se o cartão traseiro for clicado
+            if (viewFlipper.displayedChild == 1) {
+                stopwatch.stop()
             }
         }
 
-        cardFront.setOnClickListener(flipCard)
-        cardBack.setOnClickListener(flipCard)
 
     }
 }
+
 
