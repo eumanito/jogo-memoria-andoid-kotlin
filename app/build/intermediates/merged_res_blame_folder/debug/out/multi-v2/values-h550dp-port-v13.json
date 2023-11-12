@@ -4,7 +4,7 @@
             "outputFile": "com.example.memorygame.app-mergeDebugResources-29:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/manito/.gradle/caches/transforms-3/28b77949ed5299835aa1a7e9e1e871fb/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "source": "/home/gabriel/.gradle/caches/transforms-3/28b77949ed5299835aa1a7e9e1e871fb/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

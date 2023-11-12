@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.memorygame.app-merged_res-31:/layout_oneflipcard.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/layout/oneflipcard.xml"
+    },
+    {
         "merged": "com.example.memorygame.app-merged_res-31:/drawable-xhdpi_baseline_email_24.png.flat",
         "source": "com.example.memorygame.app-pngs-27:/drawable-xhdpi/baseline_email_24.png"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "com.example.memorygame.app-merged_res-31:/drawable-anydpi-v21_baseline_lock_24.xml.flat",
         "source": "com.example.memorygame.app-pngs-27:/drawable-anydpi-v21/baseline_lock_24.xml"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/animator_frontanimator.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/animator/frontanimator.xml"
     },
     {
         "merged": "com.example.memorygame.app-merged_res-31:/drawable-ldpi_baseline_email_24.png.flat",
@@ -186,6 +194,10 @@
     {
         "merged": "com.example.memorygame.app-merged_res-31:/drawable-hdpi_ic_launcher_background.png.flat",
         "source": "com.example.memorygame.app-pngs-27:/drawable-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.memorygame.app-merged_res-31:/animator_backanimator.xml.flat",
+        "source": "com.example.memorygame.app-main-33:/animator/backanimator.xml"
     },
     {
         "merged": "com.example.memorygame.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",

@@ -19,6 +19,9 @@
     </array>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_size">150dp</dimen>
+    <dimen name="card_text_size">16sp</dimen>
     <string name="app_name">memorygame</string>
     <style name="Base.Theme.Memorygame" parent="Theme.Material3.DayNight.NoActionBar">
         

@@ -4,7 +4,7 @@
             "outputFile": "com.example.memorygame.app-mergeDebugResources-29:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/manito/.gradle/caches/transforms-3/26c911d3cf93a7c0e4fcf2c49b0a758c/transformed/appcompat-1.6.1/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/gabriel/.gradle/caches/transforms-3/26c911d3cf93a7c0e4fcf2c49b0a758c/transformed/appcompat-1.6.1/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/manito/.gradle/caches/transforms-3/3c11ddf1f1ffbda5ee4d54edb6c4ee68/transformed/core-1.9.0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/gabriel/.gradle/caches/transforms-3/3c11ddf1f1ffbda5ee4d54edb6c4ee68/transformed/core-1.9.0/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

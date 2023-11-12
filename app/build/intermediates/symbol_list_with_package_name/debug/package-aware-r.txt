@@ -43,6 +43,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+animator backanimator
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -52,6 +53,7 @@ animator fragment_fade_enter
 animator fragment_fade_exit
 animator fragment_open_enter
 animator fragment_open_exit
+animator frontanimator
 animator m3_appbar_state_list_animator
 animator m3_btn_elevated_btn_state_list_anim
 animator m3_btn_state_list_anim
@@ -2149,6 +2151,9 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
+dimen card_corner_radius
+dimen card_size
+dimen card_text_size
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -3263,6 +3268,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridLayout
 id group_divider
 id grouping
 id groups
@@ -3408,6 +3414,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id pointTextView
 id position
 id postLayout
 id pressed
@@ -3518,6 +3525,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeView
 id title
 id titleDividerNoCustom
 id title_template
@@ -3745,6 +3753,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout oneflipcard
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
