@@ -103,7 +103,7 @@ class AnimatorActivity : AppCompatActivity() {
             R.animator.backanimator
         ) as AnimatorSet
 
-        // Initialize the click listener for flipping cards
+        // Começa  o click listener para os flipping cards
         viewFlipper.setOnClickListener {
             if (viewFlipper.displayedChild == 0) {
                 // Se o cartão da frente for exibido, vire para o cartão de trás
