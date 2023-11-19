@@ -33,9 +33,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/gabriel/.gradle/
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/gabriel/.gradle/caches/transforms-3/e1e427403df3867ef4c5f1dd522ac9f1/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/gabriel/.gradle/caches/transforms-3/c25faed1bfb6072ee48535331e221bcc/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/gabriel/.gradle/caches/transforms-3/f65fc4e33e9c6690c14e4fbae46679d5/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/gabriel/.gradle/caches/transforms-3/2cb4b5a46196d7fcbae48de0cc76e1e0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:exifinterface:27.1.0] /home/gabriel/.gradle/caches/transforms-3/41f4497b0933a50e62f21c01c80d86ee/transformed/exifinterface-27.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-3/6cdefc14d9ed75997d852f8e982b677f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/gabriel/.gradle/caches/transforms-3/f6258c9338dc0fe367c50f1f943dd550/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/gabriel/.gradle/caches/transforms-3/376e86810a3fae01001d0f6bf6f5200b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
@@ -70,8 +68,6 @@ MERGED from [androidx.core:core:1.9.0] /home/gabriel/.gradle/caches/transforms-3
 MERGED from [androidx.core:core:1.9.0] /home/gabriel/.gradle/caches/transforms-3/3c11ddf1f1ffbda5ee4d54edb6c4ee68/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/gabriel/.gradle/caches/transforms-3/763f17d2b1191d574ecac92f1ea4c5fb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/gabriel/.gradle/caches/transforms-3/763f17d2b1191d574ecac92f1ea4c5fb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:7:5-12:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/gabriel/.gradle/caches/transforms-3/376e86810a3fae01001d0f6bf6f5200b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/gabriel/.gradle/caches/transforms-3/376e86810a3fae01001d0f6bf6f5200b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/gabriel/.gradle/caches/transforms-3/bad35634c7ca9839e71625c3bd8774c2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
@@ -198,12 +194,8 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/gabriel/.gradle/c
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/gabriel/.gradle/caches/transforms-3/c25faed1bfb6072ee48535331e221bcc/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/gabriel/.gradle/caches/transforms-3/f65fc4e33e9c6690c14e4fbae46679d5/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/gabriel/.gradle/caches/transforms-3/f65fc4e33e9c6690c14e4fbae46679d5/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/gabriel/.gradle/caches/transforms-3/2cb4b5a46196d7fcbae48de0cc76e1e0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/gabriel/.gradle/caches/transforms-3/2cb4b5a46196d7fcbae48de0cc76e1e0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:exifinterface:27.1.0] /home/gabriel/.gradle/caches/transforms-3/41f4497b0933a50e62f21c01c80d86ee/transformed/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:exifinterface:27.1.0] /home/gabriel/.gradle/caches/transforms-3/41f4497b0933a50e62f21c01c80d86ee/transformed/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-3/6cdefc14d9ed75997d852f8e982b677f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-3/6cdefc14d9ed75997d852f8e982b677f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /home/gabriel/.gradle/caches/transforms-3/f6258c9338dc0fe367c50f1f943dd550/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
@@ -278,14 +270,6 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/gabriel/.gradle/ca
 		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/gabriel/.gradle/caches/transforms-3/763f17d2b1191d574ecac92f1ea4c5fb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/gabriel/.gradle/caches/transforms-3/763f17d2b1191d574ecac92f1ea4c5fb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-provider#com.squareup.picasso.PicassoProvider
-ADDED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
-	android:authorities
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
-	android:exported
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
-	android:name
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/gabriel/.gradle/caches/transforms-3/d7826524dd540eb614ebc44c9631911b/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/gabriel/.gradle/caches/transforms-3/bad35634c7ca9839e71625c3bd8774c2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
 	android:value
