@@ -10,11 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.cardview.widget.CardView
 import com.example.memorygame.R
 import com.example.memorygame.R.*
+import com.example.memorygame.services.CharacterService
+import com.squareup.picasso.Picasso
+
 
 class AnimatorActivity : AppCompatActivity() {
 
@@ -43,6 +47,7 @@ class AnimatorActivity : AppCompatActivity() {
         // Initialize the GridLayout
         gridLayout = findViewById(id.gridLayout)
 
+
         // Create card views
         createCardView("Front Card 1", pointTextView, points)
         createCardView("Front Card 2", pointTextView, points)
@@ -50,7 +55,7 @@ class AnimatorActivity : AppCompatActivity() {
         createCardView("Front Card 4", pointTextView, points)
     }
 
-    private fun createCardView(cardTitle: String, pointTextView: TextView, points: Int) {
+    private suspend fun createCardView(cardTitle: String, pointTextView: TextView, points: Int) {
         // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)
 
@@ -66,6 +71,16 @@ class AnimatorActivity : AppCompatActivity() {
         frontCard.radius = resources.getDimension(R.dimen.card_corner_radius)
         frontCard.useCompatPadding = true
         frontCard.setCardBackgroundColor(Color.parseColor("#263238")) // front card color
+
+
+        val frontImageView = ImageView(this)
+        val characterService = CharacterService();
+        val frontCharacter = characterService.getRandomCharacter()
+
+        // Load the character's image into the ImageView using Picasso (or the desired library)
+        Picasso.get().load(frontCharacter.image).into(frontImageView)
+
+        frontCard.addView(frontImageView)
 
         val frontTextView = TextView(this)
         frontTextView.text = cardTitle
