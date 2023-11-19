@@ -14,10 +14,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.lifecycleScope
 import com.example.memorygame.R
 import com.example.memorygame.R.*
 import com.example.memorygame.services.CharacterService
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.launch
 
 
 class AnimatorActivity : AppCompatActivity() {
@@ -48,11 +50,12 @@ class AnimatorActivity : AppCompatActivity() {
         gridLayout = findViewById(id.gridLayout)
 
 
-        // Create card views
-        createCardView("Front Card 1", pointTextView, points)
-        createCardView("Front Card 2", pointTextView, points)
-        createCardView("Front Card 3", pointTextView, points)
-        createCardView("Front Card 4", pointTextView, points)
+        lifecycleScope.launch {
+            createCardView("Front Card 1", pointTextView, points)
+            createCardView("Front Card 2", pointTextView, points)
+            createCardView("Front Card 3", pointTextView, points)
+            createCardView("Front Card 4", pointTextView, points)
+        }
     }
 
     private suspend fun createCardView(cardTitle: String, pointTextView: TextView, points: Int) {
