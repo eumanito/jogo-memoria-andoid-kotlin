@@ -1,10 +1,14 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.memorygame.app-mergeDebugResources-29:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.example.memorygame.app-mergeDebugResources-34:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/home/gabriel/.gradle/caches/transforms-3/28b77949ed5299835aa1a7e9e1e871fb/transformed/material-1.10.0/res/values-small-v4/values-small-v4.xml",
+=======
+                    "source": "/home/manito/.gradle/caches/transforms-3/62333f52796338b038f00fedab29bb74/transformed/material-1.10.0/res/values-small-v4/values-small-v4.xml",
+>>>>>>> main
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

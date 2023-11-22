@@ -1,10 +1,14 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.memorygame.app-mergeDebugResources-29:/values-v22/values-v22.xml",
+            "outputFile": "com.example.memorygame.app-mergeDebugResources-34:/values-v22/values-v22.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/home/gabriel/.gradle/caches/transforms-3/26c911d3cf93a7c0e4fcf2c49b0a758c/transformed/appcompat-1.6.1/res/values-v22/values-v22.xml",
+=======
+                    "source": "/home/manito/.gradle/caches/transforms-3/23c3452aae471e923a77fde2f4252940/transformed/appcompat-1.6.1/res/values-v22/values-v22.xml",
+>>>>>>> main
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

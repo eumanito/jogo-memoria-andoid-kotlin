@@ -23,12 +23,16 @@ drawable new_background
 font bungee
 id buttonLogin
 id buttonSignup
+id card_back
+id card_front
 id editTextEmail
 id editTextEmailLogin
-id editTextName
 id editTextPassWord
 id editTextPassWordLogin
+<<<<<<< HEAD
 id gridLayout
+=======
+>>>>>>> main
 id pointTextView
 id singUp
 id textSignUp
@@ -39,6 +43,12 @@ layout oneflipcard
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
 style Base.Theme.Memorygame
 style Theme.Memorygame
 xml backup_rules
