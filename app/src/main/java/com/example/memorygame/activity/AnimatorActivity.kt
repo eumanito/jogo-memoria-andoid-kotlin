@@ -22,6 +22,7 @@ class AnimatorActivity : AppCompatActivity() {
 
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
+
     private lateinit var frontAnimation: AnimatorSet
     private lateinit var backAnimation: AnimatorSet
     private var isFront = true
@@ -33,18 +34,8 @@ class AnimatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layout.oneflipcard)
 
-        val scale = applicationContext.resources.displayMetrics.density
-        val cardFront = findViewById<TextView>(R.id.card_front)
-        val cardBack = findViewById<TextView>(R.id.card_back)
-
-        cardFront.cameraDistance = 8000 * scale
-        cardBack.cameraDistance = 8000 * scale
-
-        frontAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.frontanimator) as AnimatorSet
-        backAnimation = AnimatorInflater.loadAnimator(applicationContext, R.animator.backanimator) as AnimatorSet
-
-        findViewById<TextView>(R.id.timeView)
-        timeTextView = findViewById(R.id.timeView)
+        // Initialize views
+        timeTextView = findViewById(id.timeView)
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
 
@@ -155,6 +146,7 @@ class AnimatorActivity : AppCompatActivity() {
                 stopwatch.stop()
             }
         }
+
 
     }
 }
