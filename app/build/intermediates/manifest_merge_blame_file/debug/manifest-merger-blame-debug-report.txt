@@ -5,283 +5,303 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="19"
 9        android:targetSdkVersion="34" />
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:25:5-67
-11-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:25:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:26:5-79
-12-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:26:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.memorygame.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.example.memorygame.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+12    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:10:5-79
+13-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:10:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:11:5-67
+14-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:11:22-64
+15
+16    <permission
+16-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+17        android:name="com.example.memorygame.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 19
-20    <application
-20-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:5:5-33:19
-21        android:allowBackup="true"
-21-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:6:9-35
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:7:9-65
-24        android:debuggable="true"
-25        android:extractNativeLibs="true"
-26        android:fullBackupContent="@xml/backup_rules"
-26-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:8:9-54
-27        android:icon="@mipmap/ic_launcher"
-27-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:9:9-43
-28        android:label="@string/app_name"
-28-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:10:9-41
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:11:9-54
-30        android:supportsRtl="true"
-30-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:12:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.Memorygame" >
-32-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:13:9-48
-33        <activity
-33-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:15:9-18:43
-34            android:name="com.example.memorygame.activity.SignUpActivity"
-34-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:16:13-52
-35            android:exported="false" />
-35-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:17:13-37
-36        <activity
-36-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:19:9-28:20
-37            android:name="com.example.memorygame.activity.LoginActivity"
-37-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:20:13-51
-38            android:exported="true" >
-38-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:21:13-36
-39            <intent-filter>
-39-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:23:13-27:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:24:17-69
-40-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:24:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:26:17-77
-42-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:26:27-74
-43            </intent-filter>
-44        </activity>
-45        <activity android:name="com.example.memorygame.activity.AnimatorActivity" />
-45-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:29:9-63
-45-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:29:19-60
-46
-47        <meta-data
-47-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:30:9-32:57
-48            android:name="preloaded_fonts"
-48-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:31:13-43
-49            android:resource="@array/preloaded_fonts" />
-49-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:32:13-54
-50
-51        <service
-51-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:8:9-14:19
-52            android:name="com.google.firebase.components.ComponentDiscoveryService"
-52-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:9:13-84
-53            android:directBootAware="true"
-53-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
-54            android:exported="false" >
-54-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:10:13-37
-55            <meta-data
-55-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:11:13-13:85
-56                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
-56-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:12:17-119
-57                android:value="com.google.firebase.components.ComponentRegistrar" />
-57-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:13:17-82
-58            <meta-data
-58-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:69:13-71:85
-59                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-59-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:70:17-109
-60                android:value="com.google.firebase.components.ComponentRegistrar" />
-60-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:71:17-82
-61            <meta-data
-61-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
-62                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-62-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
-63                android:value="com.google.firebase.components.ComponentRegistrar" />
-63-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
-64            <meta-data
-64-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
-65                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-65-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
-66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
-67        </service>
-68
-69        <activity
-69-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:29:9-46:20
-70            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-70-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:30:13-80
-71            android:excludeFromRecents="true"
-71-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:31:13-46
-72            android:exported="true"
-72-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:32:13-36
-73            android:launchMode="singleTask"
-73-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:33:13-44
-74            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-74-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:34:13-72
-75            <intent-filter>
-75-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:35:13-45:29
-76                <action android:name="android.intent.action.VIEW" />
-76-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:17-69
-76-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:25-66
-77
-78                <category android:name="android.intent.category.DEFAULT" />
-78-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:17-76
-78-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:27-73
-79                <category android:name="android.intent.category.BROWSABLE" />
-79-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:17-78
-79-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:27-75
-80
-81                <data
-81-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:41:17-44:51
-82                    android:host="firebase.auth"
-82-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:42:21-49
-83                    android:path="/"
-83-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:43:21-37
-84                    android:scheme="genericidp" />
-84-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:44:21-48
-85            </intent-filter>
-86        </activity>
-87        <activity
-87-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:47:9-64:20
-88            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-88-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:48:13-79
-89            android:excludeFromRecents="true"
-89-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:49:13-46
-90            android:exported="true"
-90-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:50:13-36
-91            android:launchMode="singleTask"
-91-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:51:13-44
-92            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-92-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:52:13-72
-93            <intent-filter>
-93-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:53:13-63:29
-94                <action android:name="android.intent.action.VIEW" />
-94-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:17-69
-94-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:25-66
-95
-96                <category android:name="android.intent.category.DEFAULT" />
-96-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:17-76
-96-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:27-73
-97                <category android:name="android.intent.category.BROWSABLE" />
-97-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:17-78
-97-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:27-75
-98
-99                <data
-99-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:41:17-44:51
-100                    android:host="firebase.auth"
-100-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:42:21-49
-101                    android:path="/"
-101-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:43:21-37
-102                    android:scheme="recaptcha" />
-102-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:44:21-48
-103            </intent-filter>
-104        </activity>
-105
-106        <provider
-106-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
-107            android:name="com.google.firebase.provider.FirebaseInitProvider"
-107-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
-108            android:authorities="com.example.memorygame.firebaseinitprovider"
-108-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
-109            android:directBootAware="true"
-109-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
-110            android:exported="false"
-110-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
-111            android:initOrder="100" />
-111-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
-112
-113        <activity
-113-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-114            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-114-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-115            android:exported="false"
-115-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-116            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-116-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-117
-118        <meta-data
-118-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-119            android:name="com.google.android.gms.version"
-119-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-120            android:value="@integer/google_play_services_version" />
-120-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-121
-122        <provider
-122-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-123            android:name="androidx.startup.InitializationProvider"
-123-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-124            android:authorities="com.example.memorygame.androidx-startup"
-124-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-125            android:exported="false" >
-125-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-126            <meta-data
-126-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-127                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-127-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-128                android:value="androidx.startup" />
-128-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-129            <meta-data
-129-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
-130                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-130-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-131                android:value="androidx.startup" />
-131-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
-132            <meta-data
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-133                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-133-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-134                android:value="androidx.startup" />
-134-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-135        </provider>
-136
-137        <receiver
-137-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-138            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-138-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-139            android:directBootAware="false"
-139-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-140            android:enabled="true"
-140-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-141            android:exported="true"
-141-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-142            android:permission="android.permission.DUMP" >
-142-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-143            <intent-filter>
-143-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-144                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-144-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-144-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-145            </intent-filter>
-146            <intent-filter>
-146-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-147                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-147-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-147-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-148            </intent-filter>
-149            <intent-filter>
-149-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-150                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-150-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-150-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-151            </intent-filter>
-152            <intent-filter>
-152-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-153                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-153-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-153-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-154            </intent-filter>
-155        </receiver>
-156    </application>
-157
-158</manifest>
+20    <uses-permission android:name="com.example.memorygame.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:5:5-33:19
+23        android:allowBackup="true"
+23-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:6:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.9.0] /home/manito/.gradle/caches/transforms-3/4eb4df7abddc9cb06661231edf866aff/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+25        android:dataExtractionRules="@xml/data_extraction_rules"
+25-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:7:9-65
+26        android:debuggable="true"
+27        android:extractNativeLibs="true"
+28        android:fullBackupContent="@xml/backup_rules"
+28-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:8:9-54
+29        android:icon="@mipmap/ic_launcher"
+29-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:9:9-43
+30        android:label="@string/app_name"
+30-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:10:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:11:9-54
+32        android:supportsRtl="true"
+32-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:12:9-35
+33        android:testOnly="true"
+34        android:theme="@style/Theme.Memorygame" >
+34-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:13:9-48
+35        <activity
+35-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:15:9-18:43
+36            android:name="com.example.memorygame.activity.SignUpActivity"
+36-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:16:13-52
+37            android:exported="false" />
+37-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:17:13-37
+38        <activity
+38-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:19:9-28:20
+39            android:name="com.example.memorygame.activity.LoginActivity"
+39-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:20:13-51
+40            android:exported="true" >
+40-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:21:13-36
+41            <intent-filter>
+41-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:23:13-27:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:24:17-69
+42-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:24:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:26:17-77
+44-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:26:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity android:name="com.example.memorygame.activity.AnimatorActivity" />
+47-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:29:9-63
+47-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:29:19-60
+48
+49        <meta-data
+49-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:30:9-32:57
+50            android:name="preloaded_fonts"
+50-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:31:13-43
+51            android:resource="@array/preloaded_fonts" />
+51-->/var/android/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:32:13-54
+52
+53        <service
+53-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:9:9-15:19
+54            android:name="com.google.firebase.components.ComponentDiscoveryService"
+54-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:10:13-84
+55            android:directBootAware="true"
+55-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+56            android:exported="false" >
+56-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:11:13-37
+57            <meta-data
+57-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:12:13-14:85
+58                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
+58-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:13:17-129
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.firebase:firebase-firestore-ktx:24.9.1] /home/manito/.gradle/caches/transforms-3/497866eac8c2842dc5daae33527ac1ec/transformed/firebase-firestore-ktx-24.9.1/AndroidManifest.xml:14:17-82
+60            <meta-data
+60-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:11:13-13:85
+61                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+61-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:12:17-119
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[com.google.firebase:firebase-auth-ktx:22.2.0] /home/manito/.gradle/caches/transforms-3/8e071db81deb547bb6c0027ae3fbfb0e/transformed/firebase-auth-ktx-22.2.0/AndroidManifest.xml:13:17-82
+63            <meta-data
+63-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:17:13-19:85
+64                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+64-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:18:17-122
+65                android:value="com.google.firebase.components.ComponentRegistrar" />
+65-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:19:17-82
+66            <meta-data
+66-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:20:13-22:85
+67                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+67-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:21:17-111
+68                android:value="com.google.firebase.components.ComponentRegistrar" />
+68-->[com.google.firebase:firebase-firestore:24.9.1] /home/manito/.gradle/caches/transforms-3/3b186b17792c341dcbb58bad9906d14e/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:22:17-82
+69            <meta-data
+69-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:69:13-71:85
+70                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+70-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:70:17-109
+71                android:value="com.google.firebase.components.ComponentRegistrar" />
+71-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:71:17-82
+72            <meta-data
+72-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+73                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+73-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/manito/.gradle/caches/transforms-3/ae88738530721e54347a01f2a1be4b90/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+76                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+76-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+78        </service>
+79
+80        <activity
+80-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:29:9-46:20
+81            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+81-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:30:13-80
+82            android:excludeFromRecents="true"
+82-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:31:13-46
+83            android:exported="true"
+83-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:32:13-36
+84            android:launchMode="singleTask"
+84-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:33:13-44
+85            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+85-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:34:13-72
+86            <intent-filter>
+86-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:35:13-45:29
+87                <action android:name="android.intent.action.VIEW" />
+87-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:17-69
+87-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:25-66
+88
+89                <category android:name="android.intent.category.DEFAULT" />
+89-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:17-76
+89-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:27-73
+90                <category android:name="android.intent.category.BROWSABLE" />
+90-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:17-78
+90-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:27-75
+91
+92                <data
+92-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:41:17-44:51
+93                    android:host="firebase.auth"
+93-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:42:21-49
+94                    android:path="/"
+94-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:43:21-37
+95                    android:scheme="genericidp" />
+95-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:44:21-48
+96            </intent-filter>
+97        </activity>
+98        <activity
+98-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:47:9-64:20
+99            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+99-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:48:13-79
+100            android:excludeFromRecents="true"
+100-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:49:13-46
+101            android:exported="true"
+101-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:50:13-36
+102            android:launchMode="singleTask"
+102-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:51:13-44
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+103-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:52:13-72
+104            <intent-filter>
+104-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:53:13-63:29
+105                <action android:name="android.intent.action.VIEW" />
+105-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:17-69
+105-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:36:25-66
+106
+107                <category android:name="android.intent.category.DEFAULT" />
+107-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:17-76
+107-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:38:27-73
+108                <category android:name="android.intent.category.BROWSABLE" />
+108-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:17-78
+108-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:39:27-75
+109
+110                <data
+110-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:41:17-44:51
+111                    android:host="firebase.auth"
+111-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:42:21-49
+112                    android:path="/"
+112-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:43:21-37
+113                    android:scheme="recaptcha" />
+113-->[com.google.firebase:firebase-auth:22.2.0] /home/manito/.gradle/caches/transforms-3/a051d4f2e3f2398962bf5b18f6d5814d/transformed/firebase-auth-22.2.0/AndroidManifest.xml:44:21-48
+114            </intent-filter>
+115        </activity>
+116
+117        <provider
+117-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+118            android:name="com.google.firebase.provider.FirebaseInitProvider"
+118-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+119            android:authorities="com.example.memorygame.firebaseinitprovider"
+119-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+120            android:directBootAware="true"
+120-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+121            android:exported="false"
+121-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+122            android:initOrder="100" />
+122-->[com.google.firebase:firebase-common:20.4.2] /home/manito/.gradle/caches/transforms-3/a2bdfe88f6608ae504a47b86055b0582/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+123
+124        <activity
+124-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+125            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+125-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+126            android:exported="false"
+126-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+127            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+127-->[com.google.android.gms:play-services-base:18.0.1] /home/manito/.gradle/caches/transforms-3/302c71019c2d257418baed888fe543df/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+128
+129        <meta-data
+129-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+130            android:name="com.google.android.gms.version"
+130-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+131            android:value="@integer/google_play_services_version" />
+131-->[com.google.android.gms:play-services-basement:18.1.0] /home/manito/.gradle/caches/transforms-3/482ddd9bd4088922494051525a7951a5/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+132
+133        <provider
+133-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+134            android:name="androidx.startup.InitializationProvider"
+134-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+135            android:authorities="com.example.memorygame.androidx-startup"
+135-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+136            android:exported="false" >
+136-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+137            <meta-data
+137-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+138                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+138-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+139                android:value="androidx.startup" />
+139-->[androidx.emoji2:emoji2:1.2.0] /home/manito/.gradle/caches/transforms-3/53bf16d5b7315abcab292c75992aecbe/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+140            <meta-data
+140-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+141                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+141-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+142                android:value="androidx.startup" />
+142-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/manito/.gradle/caches/transforms-3/c34c98b1062215527f10b350a9e6f607/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+143            <meta-data
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+144                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+145                android:value="androidx.startup" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+146        </provider>
+147
+148        <receiver
+148-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+149            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+150            android:directBootAware="false"
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+151            android:enabled="true"
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+152            android:exported="true"
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+153            android:permission="android.permission.DUMP" >
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+154            <intent-filter>
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+155                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+156            </intent-filter>
+157            <intent-filter>
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+158                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+159            </intent-filter>
+160            <intent-filter>
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+161                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+162            </intent-filter>
+163            <intent-filter>
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+164                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/manito/.gradle/caches/transforms-3/09bd8f26ad9e68185b22e97f9af45557/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+165            </intent-filter>
+166        </receiver>
+167    </application>
+168
+169</manifest>
