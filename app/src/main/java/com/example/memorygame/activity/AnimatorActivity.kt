@@ -10,11 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.cardview.widget.CardView
 import com.example.memorygame.R
 import com.example.memorygame.R.*
+import com.squareup.picasso.Picasso
 
 class AnimatorActivity : AppCompatActivity() {
 
@@ -55,7 +57,7 @@ class AnimatorActivity : AppCompatActivity() {
         val viewFlipper = ViewFlipper(this)
 
         // Set the width and height to be the same to create a square card
-        val cardSize = resources.getDimensionPixelSize(R.dimen.card_size)
+        val cardSize = resources.getDimensionPixelSize(dimen.card_size)
         val layoutParams = GridLayout.LayoutParams()
         layoutParams.width = cardSize
         layoutParams.height = cardSize
@@ -63,29 +65,33 @@ class AnimatorActivity : AppCompatActivity() {
 
         // Set up front card
         val frontCard = CardView(this)
-        frontCard.radius = resources.getDimension(R.dimen.card_corner_radius)
+        frontCard.radius = resources.getDimension(dimen.card_corner_radius)
         frontCard.useCompatPadding = true
         frontCard.setCardBackgroundColor(Color.parseColor("#263238")) // front card color
 
         val frontTextView = TextView(this)
         frontTextView.text = cardTitle
-        frontTextView.textSize = resources.getDimension(R.dimen.card_text_size)
+        frontTextView.textSize = resources.getDimension(dimen.card_text_size)
         frontTextView.setTextColor(Color.WHITE)
         frontCard.addView(frontTextView)
 
         // Set up back card
         val backCard = CardView(this)
-        backCard.radius = resources.getDimension(R.dimen.card_corner_radius)
+        backCard.radius = resources.getDimension(dimen.card_corner_radius)
         backCard.useCompatPadding = true
         backCard.setCardBackgroundColor(Color.parseColor("#A7CB54")) // back card color
         backCard.visibility = View.INVISIBLE // Initially hide the back card
-
+        /*
         val backTextView = TextView(this)
         backTextView.text = "Back of $cardTitle"
-        backTextView.textSize = resources.getDimension(R.dimen.card_text_size)
+        backTextView.textSize = resources.getDimension(dimen.card_text_size)
         backTextView.setTextColor(Color.WHITE)
-        backCard.addView(backTextView)
+        backCard.addView(backTextView) */
+        val imageView = ImageView(this);
+        val url = "https://i.imgur.com/fITuWTt.png"
+        Picasso.with(this).load(url).into(imageView)
 
+        backCard.addView(imageView)
         // Add both cards to the ViewFlipper
         viewFlipper.addView(frontCard)
         viewFlipper.addView(backCard)
@@ -96,11 +102,11 @@ class AnimatorActivity : AppCompatActivity() {
         // Set up flip animation for the ViewFlipper
         val flipAnimationIn = AnimatorInflater.loadAnimator(
             applicationContext,
-            R.animator.frontanimator
+            animator.frontanimator
         ) as AnimatorSet
         val flipAnimationOut = AnimatorInflater.loadAnimator(
             applicationContext,
-            R.animator.backanimator
+            animator.backanimator
         ) as AnimatorSet
 
         // Começa  o click listener para os flipping cards

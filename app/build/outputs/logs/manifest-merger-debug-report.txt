@@ -55,6 +55,10 @@ MERGED from [androidx.print:print:1.0.0] /home/gabriel/.gradle/caches/transforms
 		INJECTED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:5:5-33:19
 INJECTED from /home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/src/main/AndroidManifest.xml:5:5-33:19

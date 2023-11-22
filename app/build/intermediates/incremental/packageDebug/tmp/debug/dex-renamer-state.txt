@@ -1,4 +1,4 @@
-#Sun Nov 19 21:07:25 BRT 2023
+#Tue Nov 21 22:35:11 BRT 2023
 base.0=/home/gabriel/Documentos/Faculdade/jogo-memoria-andoid-kotlin/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
