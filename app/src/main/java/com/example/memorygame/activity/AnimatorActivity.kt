@@ -12,7 +12,6 @@ import com.example.memorygame.R
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
-
     private lateinit var frontAnimation: AnimatorSet
     private lateinit var backAnimation: AnimatorSet
     private var isFront = true
@@ -23,7 +22,6 @@ class AnimatorActivity : AppCompatActivity() {
         setContentView(R.layout.oneflipcard)
 
         val scale = applicationContext.resources.displayMetrics.density
-
         val cardFront = findViewById<TextView>(R.id.card_front)
         val cardBack = findViewById<TextView>(R.id.card_back)
 
@@ -65,7 +63,6 @@ class AnimatorActivity : AppCompatActivity() {
 
         cardFront.setOnClickListener(flipCard)
         cardBack.setOnClickListener(flipCard)
-
     }
 }
 
