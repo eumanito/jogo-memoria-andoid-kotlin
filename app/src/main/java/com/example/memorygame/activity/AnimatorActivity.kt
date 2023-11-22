@@ -5,6 +5,7 @@ import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -62,6 +63,13 @@ class AnimatorActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val placar = documento.toObject(Placar::class.java)
                     this.points = placar?.pontuacao!!
+
+                    val pointTextView = findViewById<TextView>(R.id.pointTextView)
+                    var pts = this.points
+                    this.points = pts
+                    val pointText = "Point: $pts"
+                    pointTextView.text = pointText
+
                 } else {
                     Toast.makeText(
                         baseContext,
@@ -83,6 +91,7 @@ class AnimatorActivity : AppCompatActivity() {
                 backAnimation.setTarget(cardBack)
                 frontAnimation.start()
                 backAnimation.start()
+
                 false
             } else {
                 stopwatch.stop()
