@@ -17,24 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
-        android:text="Signup"
-        android:textSize="30sp" />
-
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/background_text"
-        android:drawableLeft="@drawable/baseline_person_24"
-        android:drawablePadding="6dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="text"
-        android:padding="12dp"
-        android:textColor="#0D0D0D"
-        android:textColorHint="#0D0D0D" />
+        android:text="Formulário de Cadastro"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -45,7 +29,7 @@
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="6dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:textColor="#0D0D0D"
@@ -60,7 +44,7 @@
         android:drawableLeft="@drawable/baseline_lock_24"
         android:drawablePadding="6dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Senha"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="#0D0D0D"
@@ -72,7 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:background="@drawable/background_button"
-        android:text="Register"
+        android:text="Cadastrar"
+        android:onClick="registerUser"
         android:textSize="18sp"
         android:textStyle="bold" />
 </LinearLayout>

@@ -23,6 +23,12 @@
     <dimen name="card_size">150dp</dimen>
     <dimen name="card_text_size">16sp</dimen>
     <string name="app_name">memorygame</string>
+    <string name="gcm_defaultSenderId" translatable="false">772803895158</string>
+    <string name="google_api_key" translatable="false">AIzaSyANU_2_j305hgImgIDd3vi2x80rhD-PEls</string>
+    <string name="google_app_id" translatable="false">1:772803895158:android:c0ab1e81a9efdea1832457</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyANU_2_j305hgImgIDd3vi2x80rhD-PEls</string>
+    <string name="google_storage_bucket" translatable="false">memorygame-df47d.appspot.com</string>
+    <string name="project_id" translatable="false">memorygame-df47d</string>
     <style name="Base.Theme.Memorygame" parent="Theme.Material3.DayNight.NoActionBar">
         
         
