@@ -1,24 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.memorygame.app-mergeDebugResources-34:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.memorygame.app-mergeDebugResources-29:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "/home/gabriel/.gradle/caches/transforms-3/28b77949ed5299835aa1a7e9e1e871fb/transformed/material-1.10.0/res/values-large-v4/values-large-v4.xml",
-=======
-                    "source": "/home/manito/.gradle/caches/transforms-3/23c3452aae471e923a77fde2f4252940/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,114,185,256,326,396,464,532,636",
-                        "endColumns": "58,70,70,69,69,67,67,103,115",
-                        "endOffsets": "109,180,251,321,391,459,527,631,747"
-                    }
-                },
-                {
-                    "source": "/home/manito/.gradle/caches/transforms-3/62333f52796338b038f00fedab29bb74/transformed/material-1.10.0/res/values-large-v4/values-large-v4.xml",
->>>>>>> main
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -33,7 +19,6 @@
                         "endColumns": "113,115,121,133",
                         "endOffsets": "861,977,1099,1233"
                     }
-<<<<<<< HEAD
                 },
                 {
                     "source": "/home/gabriel/.gradle/caches/transforms-3/26c911d3cf93a7c0e4fcf2c49b0a758c/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
@@ -44,8 +29,6 @@
                         "endColumns": "58,70,70,69,69,67,67,103,115",
                         "endOffsets": "109,180,251,321,391,459,527,631,747"
                     }
-=======
->>>>>>> main
                 }
             ]
         }
