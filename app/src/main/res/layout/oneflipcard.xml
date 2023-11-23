@@ -13,41 +13,29 @@
         android:layout_height="wrap_content"
         android:text="0:00:00"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@id/card_back"
+        app:layout_constraintBottom_toTopOf="@id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintVertical_bias="0.05" />
 
-    <TextView
-        android:id="@+id/card_back"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="Back Card"
-        android:textSize="22sp"
-        android:background="#A7CB54"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintBottom_toTopOf="@id/pointTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeView"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintDimensionRatio="h,1:1">
+        <!-- Card views will be dynamically added here -->
+    </GridLayout>
 
-    <!--Add a textview for back part of the card-->
-    <TextView
-        android:id="@+id/card_front"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:background="#208D45"
-        android:gravity="center"
-        android:text="Front Card"
-        android:textAlignment="center"
-        android:textColor="#263238"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/pointTextView"
@@ -57,6 +45,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timeView" />
+        app:layout_constraintTop_toBottomOf="@id/gridLayout"
+        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
