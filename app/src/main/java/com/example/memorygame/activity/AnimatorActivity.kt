@@ -27,6 +27,7 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
+@Suppress("NAME_SHADOWING")
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
@@ -79,7 +80,7 @@ class AnimatorActivity : AppCompatActivity() {
                     this.points = placar?.pontuacao!!
 
                     val pointTextView = findViewById<TextView>(R.id.pointTextView)
-                    var pts = this.points
+                    val pts = this.points
                     this.points = pts
                     val pointText = "Point: $pts"
                     pointTextView.text = pointText
@@ -98,6 +99,7 @@ class AnimatorActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun createCardView(cardTitle: String, pointTextView: TextView, points: Int, user: FirebaseUser?) {
         // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)

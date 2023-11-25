@@ -2174,6 +2174,9 @@ dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
+dimen card_corner_radius
+dimen card_size
+dimen card_text_size
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -3210,8 +3213,6 @@ id buttonSignup
 id cache_measures
 id callMeasure
 id cancel_button
-id card_back
-id card_front
 id carryVelocity
 id center
 id centerCrop
@@ -3318,6 +3319,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridLayout
 id group_divider
 id grouping
 id groups

@@ -19,6 +19,9 @@
     </array>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_size">150dp</dimen>
+    <dimen name="card_text_size">16sp</dimen>
     <string name="app_name">memorygame</string>
     <string name="gcm_defaultSenderId" translatable="false">772803895158</string>
     <string name="google_api_key" translatable="false">AIzaSyANU_2_j305hgImgIDd3vi2x80rhD-PEls</string>

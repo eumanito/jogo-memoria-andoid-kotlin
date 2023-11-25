@@ -8,6 +8,9 @@ array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
 color black
 color white
+dimen card_corner_radius
+dimen card_size
+dimen card_text_size
 drawable background_button
 drawable background_login_button
 drawable background_text
@@ -20,12 +23,11 @@ drawable new_background
 font bungee
 id buttonLogin
 id buttonSignup
-id card_back
-id card_front
 id editTextEmail
 id editTextEmailLogin
 id editTextPassWord
 id editTextPassWordLogin
+id gridLayout
 id pointTextView
 id singUp
 id textSignUp
