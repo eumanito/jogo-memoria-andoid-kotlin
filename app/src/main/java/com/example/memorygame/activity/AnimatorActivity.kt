@@ -1,14 +1,11 @@
 package com.example.memorygame.activity
 
-import android.animation.Animator
 import android.animation.AnimatorInflater
-import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
@@ -70,33 +67,7 @@ class AnimatorActivity : AppCompatActivity() {
         createCardView("Front Card 3", pointTextView, points, user)
         createCardView("Front Card 4", pointTextView, points, user)
 
-
-        /* OBTEM PLACAR */
-        placar = database.collection("placar")
-        if (user != null) {
-            placar.document(user.email!!).get().addOnSuccessListener { documento ->
-                if (documento != null && documento.exists()) {
-                    val placar = documento.toObject(Placar::class.java)
-                    this.points = placar?.pontuacao!!
-
-                    val pointTextView = findViewById<TextView>(R.id.pointTextView)
-                    val pts = this.points
-                    this.points = pts
-                    val pointText = "Point: $pts"
-                    pointTextView.text = pointText
-
-                } else {
-                    Toast.makeText(
-                        baseContext,
-                        "Erro ao ler o documento, ele não existe ou está vazio"
-                        , Toast.LENGTH_SHORT).show()
-                }
-            }.addOnFailureListener { error ->
-                Toast.makeText(
-                    baseContext,
-                    "Erro ao ler Dados do Servidor: ${error.message.toString()}",Toast.LENGTH_SHORT).show()
-            }
-        }
+        obterPlacar()
     }
 
     @SuppressLint("SetTextI18n")
@@ -189,26 +160,66 @@ class AnimatorActivity : AppCompatActivity() {
                 val pts = points + 1
                 pointTextView.text = "Point: $pts"
 
-                /* GRAVA PLACAR */
-                if (user != null) {
-                    val pontuacao = Placar(user.email!!, pts)
-                    placar = database.collection("placar")
-                    placar.document(user.email!!).set(pontuacao).addOnSuccessListener {
-                        Toast.makeText(baseContext, "Sucesso ao gravar dados", Toast.LENGTH_SHORT)
-                            .show()
-                    }.addOnFailureListener { error ->
-                        Toast.makeText(
-                            baseContext,
-                            "Erro ao gravar dados: ${error.message.toString()}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
+                gravarPlacar()  
             }
 
             // Pare o cronômetro se o cartão traseiro for clicado
             if (viewFlipper.displayedChild == 1) {
                 stopwatch.stop()
+            }
+        }
+    }
+
+    private fun obterPlacar() {
+        placar = database.collection("placar")
+        auth = Firebase.auth
+        val user = auth.currentUser
+
+        if (user != null) {
+            placar.document(user.email!!).get().addOnSuccessListener { documento ->
+                if (documento != null && documento.exists()) {
+                    val placar = documento.toObject(Placar::class.java)
+                    this.points = placar?.pontuacao!!
+
+                    val pointTextView = findViewById<TextView>(R.id.pointTextView)
+                    val pts = this.points
+                    this.points = pts
+                    val pointText = "Point: $pts"
+                    pointTextView.text = pointText
+
+                } else {
+                    Toast.makeText(
+                        baseContext,
+                        "Erro ao ler o documento, ele não existe ou está vazio",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }.addOnFailureListener { error ->
+                Toast.makeText(
+                    baseContext,
+                    "Erro ao ler Dados do Servidor: ${error.message.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun gravarPlacar() {
+        auth = Firebase.auth
+        val user = auth.currentUser
+
+        if (user != null) {
+            val pontuacao = Placar(user.email!!, this.points)
+            placar = database.collection("placar")
+            placar.document(user.email!!).set(pontuacao).addOnSuccessListener {
+                Toast.makeText(baseContext, "Sucesso ao gravar dados", Toast.LENGTH_SHORT)
+                    .show()
+            }.addOnFailureListener { error ->
+                Toast.makeText(
+                    baseContext,
+                    "Erro ao gravar dados: ${error.message.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
