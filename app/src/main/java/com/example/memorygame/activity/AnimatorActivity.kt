@@ -28,23 +28,16 @@ import com.google.firebase.ktx.Firebase
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
-    private lateinit var frontAnimation: AnimatorSet
-    private lateinit var backAnimation: AnimatorSet
-    private var isFront = true
-
     private lateinit var auth: FirebaseAuth
-
     private lateinit var database: FirebaseFirestore
     private lateinit var placar: CollectionReference
-
-    private var points = 0
-
     private lateinit var gridLayout: GridLayout
+    private var points = 0
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.oneflipcard)
+        setContentView(layout.oneflipcard)
 
         auth = Firebase.auth
         val user: FirebaseUser? = auth.currentUser
@@ -62,16 +55,16 @@ class AnimatorActivity : AppCompatActivity() {
         gridLayout = findViewById(id.gridLayout)
 
         // Create card views
-        createCardView("Front Card 1", pointTextView, points, user)
-        createCardView("Front Card 2", pointTextView, points, user)
-        createCardView("Front Card 3", pointTextView, points, user)
-        createCardView("Front Card 4", pointTextView, points, user)
+        createCardView("Front Card 1", pointTextView, user)
+        createCardView("Front Card 2", pointTextView, user)
+        createCardView("Front Card 3", pointTextView, user)
+        createCardView("Front Card 4", pointTextView, user)
 
         obterPlacar()
     }
 
     @SuppressLint("SetTextI18n")
-    private fun createCardView(cardTitle: String, pointTextView: TextView, points: Int, user: FirebaseUser?) {
+    private fun createCardView(cardTitle: String, pointTextView: TextView, user: FirebaseUser?) {
         // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)
 
@@ -119,11 +112,11 @@ class AnimatorActivity : AppCompatActivity() {
         gridLayout.addView(viewFlipper)
 
         // Set up flip animation for the ViewFlipper
-        val flipAnimationIn = AnimatorInflater.loadAnimator(
+        AnimatorInflater.loadAnimator(
             applicationContext,
             animator.frontanimator
         ) as AnimatorSet
-        val flipAnimationOut = AnimatorInflater.loadAnimator(
+        AnimatorInflater.loadAnimator(
             applicationContext,
             animator.backanimator
         ) as AnimatorSet
@@ -157,10 +150,10 @@ class AnimatorActivity : AppCompatActivity() {
 
             // Atualiza a pontuação
             if (viewFlipper.displayedChild == 1) {
-                val pts = points + 1
+                val pts = this.points + 1
                 pointTextView.text = "Point: $pts"
 
-                gravarPlacar()  
+                gravarPlacar()
             }
 
             // Pare o cronômetro se o cartão traseiro for clicado
