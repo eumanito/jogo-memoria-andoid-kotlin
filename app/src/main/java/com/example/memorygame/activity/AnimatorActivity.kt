@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
@@ -81,7 +82,8 @@ class AnimatorActivity : AppCompatActivity() {
 
         val frontTextView = TextView(this)
         frontTextView.text = cardTitle
-        frontTextView.textSize = resources.getDimension(dimen.card_text_size)
+        frontTextView.textSize = 14f
+        frontTextView.gravity = Gravity.CENTER
         frontTextView.setTextColor(Color.WHITE)
         frontCard.addView(frontTextView)
 
