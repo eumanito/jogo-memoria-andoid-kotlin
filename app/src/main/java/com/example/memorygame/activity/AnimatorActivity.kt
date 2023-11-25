@@ -49,22 +49,20 @@ class AnimatorActivity : AppCompatActivity() {
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
 
-        val pointTextView = findViewById<TextView>(id.pointTextView)
-
         // Initialize the GridLayout
         gridLayout = findViewById(id.gridLayout)
 
         // Create card views
-        createCardView("Front Card 1", pointTextView, user)
-        createCardView("Front Card 2", pointTextView, user)
-        createCardView("Front Card 3", pointTextView, user)
-        createCardView("Front Card 4", pointTextView, user)
+        createCardView("Front Card 1")
+        createCardView("Front Card 2")
+        createCardView("Front Card 3")
+        createCardView("Front Card 4")
 
         obterPlacar()
     }
 
     @SuppressLint("SetTextI18n")
-    private fun createCardView(cardTitle: String, pointTextView: TextView, user: FirebaseUser?) {
+    private fun createCardView(cardTitle: String) {
         // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)
 
@@ -150,6 +148,7 @@ class AnimatorActivity : AppCompatActivity() {
 
             // Atualiza a pontuação
             if (viewFlipper.displayedChild == 1) {
+                val pointTextView = findViewById<TextView>(id.pointTextView)
                 val pts = this.points + 1
                 pointTextView.text = "Point: $pts"
 

@@ -1,4 +1,4 @@
-#Sat Nov 25 20:10:15 BRT 2023
+#Sat Nov 25 20:15:44 BRT 2023
 base.0=/var/android/jogo-memoria-andoid-kotlin/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/var/android/jogo-memoria-andoid-kotlin/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/var/android/jogo-memoria-andoid-kotlin/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
