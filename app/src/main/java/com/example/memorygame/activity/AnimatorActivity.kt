@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.GridLayout
@@ -18,14 +19,13 @@ import com.example.memorygame.R
 import com.example.memorygame.R.*
 import com.squareup.picasso.Picasso
 import com.example.memorygame.`object`.Placar
+import com.example.memorygame.`object`.Record
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
-@Suppress("NAME_SHADOWING")
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
@@ -34,14 +34,31 @@ class AnimatorActivity : AppCompatActivity() {
     private lateinit var placar: CollectionReference
     private lateinit var gridLayout: GridLayout
     private var points = 0
+    private var elapsedTime = 0
+    private var lastRecord = ""
+
+    private val cardPairs = mutableListOf<String>()
+    private var lastFlippedView: ViewFlipper? = null
+    private var matchedPairs = 0
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layout.oneflipcard)
 
-        auth = Firebase.auth
-        val user: FirebaseUser? = auth.currentUser
+        //https://comicvine.gamespot.com/rick-and-morty/4050-81059/characters/
+        cardPairs.add("https://i.imgur.com/fITuWTt.png")
+        cardPairs.add("https://i.imgur.com/fITuWTt.png")
+        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/6/66303/4472083-vlcsnap-2015-01-31-18h46m55s179.jpg")
+        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/6/66303/4472083-vlcsnap-2015-01-31-18h46m55s179.jpg")
+        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
+        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
+        //cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7975577-squanchy.jpg")
+        //cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7975577-squanchy.jpg")
+
+        // Embaralhar os cards
+        cardPairs.shuffle()
 
         database = FirebaseFirestore.getInstance()
 
@@ -54,16 +71,17 @@ class AnimatorActivity : AppCompatActivity() {
         gridLayout = findViewById(id.gridLayout)
 
         // Create card views
-        createCardView("Front Card 1")
-        createCardView("Front Card 2")
-        createCardView("Front Card 3")
-        createCardView("Front Card 4")
+        for (i in 0 until cardPairs.size) {
+            createCardView("Card ${i + 1}", cardPairs[i])
+        }
 
-        obterPlacar()
+        //obterPlacar()
+
+        getRecord()
     }
 
     @SuppressLint("SetTextI18n")
-    private fun createCardView(cardTitle: String) {
+    private fun createCardView(cardTitle: String, imageUrl: String) {
         // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)
 
@@ -93,25 +111,16 @@ class AnimatorActivity : AppCompatActivity() {
         backCard.useCompatPadding = true
         backCard.setCardBackgroundColor(Color.parseColor("#A7CB54")) // back card color
         backCard.visibility = View.INVISIBLE // Initially hide the back card
-        /* Como era antigamente
-        val backTextView = TextView(this)
-        backTextView.text = "Back of $cardTitle"
-        backTextView.textSize = resources.getDimension(dimen.card_text_size)
-        backTextView.setTextColor(Color.WHITE)
-        backCard.addView(backTextView) */
+
         val imageView = ImageView(this);
-        val url = "https://i.imgur.com/fITuWTt.png"
-        Picasso.with(this).load(url).into(imageView)
+        Picasso.with(this).load(imageUrl).into(imageView)
 
         backCard.addView(imageView)
-        // Add both cards to the ViewFlipper
         viewFlipper.addView(frontCard)
         viewFlipper.addView(backCard)
 
-        // Add the ViewFlipper to the GridLayout
         gridLayout.addView(viewFlipper)
 
-        // Set up flip animation for the ViewFlipper
         AnimatorInflater.loadAnimator(
             applicationContext,
             animator.frontanimator
@@ -121,10 +130,9 @@ class AnimatorActivity : AppCompatActivity() {
             animator.backanimator
         ) as AnimatorSet
 
-        // Começa  o click listener para os flipping cards
         viewFlipper.setOnClickListener {
             if (viewFlipper.displayedChild == 0) {
-                // Se o cartão da frente for exibido, vire para o cartão de trás
+                // Se o card da frente for exibido, vire para o card de trás
                 frontCard.animate()
                     .rotationY(180f)
                     .setDuration(1000)
@@ -135,8 +143,7 @@ class AnimatorActivity : AppCompatActivity() {
                         viewFlipper.displayedChild = 1
                     }
             } else {
-
-                // Se o cartão de trás for exibido, vire para o cartão da frente
+                // Se o card de trás for exibido, vire para o card da frente
                 backCard.animate()
                     .rotationY(180f)
                     .setDuration(1000)
@@ -148,23 +155,41 @@ class AnimatorActivity : AppCompatActivity() {
                     }
             }
 
-            // Atualiza a pontuação
-            if (viewFlipper.displayedChild == 1) {
-                val pointTextView = findViewById<TextView>(id.pointTextView)
-                val pts = this.points + 1
-                pointTextView.text = "Point: $pts"
+            if (lastFlippedView == null) {
+                // Se este é o primeiro card virado
+                lastFlippedView = viewFlipper
+            } else {
+                // Se este é a segundo card virado
+                if (imageUrl == cardPairs[gridLayout.indexOfChild(viewFlipper) / 2]) {
 
-                gravarPlacar()
-            }
+                    // Correspondência encontrada
 
-            // Pare o cronômetro se o cartão traseiro for clicado
-            if (viewFlipper.displayedChild == 1) {
-                stopwatch.stop()
+                    /*val pointTextView = findViewById<TextView>(id.pointTextView)
+                    val pts = this.points + 1
+                    pointTextView.text = "Pontos: $pts"
+                    this.points = pts
+                    gravarPlacar()*/
+
+                    matchedPairs++
+                    if (matchedPairs == cardPairs.size / 2) {
+                        // Todas as correspondências foram encontradas - jogo completo
+                        stopwatch.stop()
+                        saveRecord()
+                        Toast.makeText(this, "Você venceu!", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // Não há correspondência, vira os cards de volta
+                    viewFlipper.postDelayed({
+                        viewFlipper.displayedChild = 0
+                        lastFlippedView?.displayedChild = 0
+                        lastFlippedView = null
+                    }, 2000)
+                }
             }
         }
     }
 
-    private fun obterPlacar() {
+    /*private fun obterPlacar() {
         placar = database.collection("placar")
         auth = Firebase.auth
         val user = auth.currentUser
@@ -214,6 +239,43 @@ class AnimatorActivity : AppCompatActivity() {
                     "Erro ao gravar dados: ${error.message.toString()}",
                     Toast.LENGTH_SHORT
                 ).show()
+            }
+        }
+    }*/
+
+    private fun getRecord() {
+        val recordCollection = database.collection("Record")
+        auth = Firebase.auth
+        val user = auth.currentUser
+
+        if (user != null) {
+            recordCollection.document(user.email!!).get().addOnSuccessListener { documento ->
+                if (documento != null && documento.exists()) {
+                    val recordObject = documento.toObject(Record::class.java)
+                    this.lastRecord = recordObject?.tempo.toString()
+                    val lastRecordTextView = findViewById<TextView>(R.id.lastRecordTextView)
+                    val text = "Seu Record: $lastRecord"
+                    lastRecordTextView.text = text
+                } else {
+                    Log.e("record","Erro ao ler o documento, ele não existe ou está vazio")
+                }
+            }.addOnFailureListener { error ->
+                Log.e("record","Erro ao ler dados do servidor: ${error.message.toString()}")
+            }
+        }
+    }
+    private fun saveRecord() {
+        auth = Firebase.auth
+        val user = auth.currentUser
+
+        if (user != null) {
+            timeTextView = findViewById(id.timeView)
+            val recordObject = Record(user.email!!, this.elapsedTime, timeTextView.text.toString())
+            val recordCollection = database.collection("Record")
+            recordCollection.document(user.email!!).set(recordObject).addOnSuccessListener {
+                Log.i("record", "Record gravado com sucesso")
+            }.addOnFailureListener { error ->
+                Log.e("record", "Erro ao gravar Record")
             }
         }
     }

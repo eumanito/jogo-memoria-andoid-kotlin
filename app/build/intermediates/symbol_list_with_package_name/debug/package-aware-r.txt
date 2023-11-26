@@ -3347,6 +3347,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id lastRecordTextView
 id layout
 id left
 id leftToRight
@@ -3467,7 +3468,6 @@ id pathRelative
 id peekHeight
 id percent
 id pin
-id pointTextView
 id position
 id postLayout
 id pressed

@@ -28,7 +28,7 @@ id editTextEmailLogin
 id editTextPassWord
 id editTextPassWordLogin
 id gridLayout
-id pointTextView
+id lastRecordTextView
 id singUp
 id textSignUp
 id timeView
