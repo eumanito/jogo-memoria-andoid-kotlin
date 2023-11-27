@@ -18,11 +18,9 @@ import android.widget.Toast
 import com.example.memorygame.R
 import com.example.memorygame.R.*
 import com.squareup.picasso.Picasso
-import com.example.memorygame.`object`.Placar
 import com.example.memorygame.`object`.Record
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
@@ -46,22 +44,19 @@ class AnimatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layout.oneflipcard)
 
-        //https://comicvine.gamespot.com/rick-and-morty/4050-81059/characters/
         cardPairs.add("https://i.imgur.com/fITuWTt.png")
         cardPairs.add("https://i.imgur.com/fITuWTt.png")
         cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
         cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
         cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
         cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
-        //cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7975577-squanchy.jpg")
-        //cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7975577-squanchy.jpg")
 
         // Embaralhar os cards
         cardPairs.shuffle()
 
         database = FirebaseFirestore.getInstance()
 
-        // Initialize views
+        // Inicializa views
         timeTextView = findViewById(id.timeView)
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
@@ -69,7 +64,7 @@ class AnimatorActivity : AppCompatActivity() {
         // Initialize the GridLayout
         gridLayout = findViewById(id.gridLayout)
 
-        // Create card views
+        // Cria card views
         for (i in 0 until cardPairs.size) {
             createCardView("Card ${i + 1}", cardPairs[i])
         }
@@ -129,31 +124,29 @@ class AnimatorActivity : AppCompatActivity() {
         viewFlipper.setOnClickListener {
             if (viewFlipper.displayedChild == 0) {
                 // Se o card da frente for exibido, vire para o card de trás
-                frontCard.animate()
-                    .rotationY(180f)
-                    .setDuration(1000)
-                    .withEndAction {
-                        frontCard.visibility = View.INVISIBLE
-                        backCard.visibility = View.VISIBLE
-                        backCard.rotationY = 0f
-                        viewFlipper.displayedChild = 1
-                        lastImage = cardPairs[gridLayout.indexOfChild(viewFlipper)]
-                    }
 
-                if (lastFlippedView == null) {
+                abrirCard(frontCard, backCard, viewFlipper)
+
+                if (this.lastFlippedView == null) {
                     // Se este é o primeiro card virado
-                    lastFlippedView = viewFlipper
-                    lastFront = frontCard
-                    lastBack = backCard
+                    this.lastImage = this.cardPairs[this.gridLayout.indexOfChild(viewFlipper)]
+                    this.lastFlippedView = viewFlipper
+                    this.lastFront = frontCard
+                    this.lastBack = backCard
                 }
                 else {
 
                     // Se este é a segundo card virado
-                    if (imageUrl == lastImage) {
+                    if (imageUrl == this.lastImage) {
 
                         // Correspondência encontrada
 
                         matchedPairs++
+
+                        this.lastImage = null
+                        this.lastFlippedView = null
+                        this.lastFront = null
+                        this.lastBack = null
 
                         if (matchedPairs == cardPairs.size / 2) {
                             // Todas as correspondências foram encontradas - jogo completo
@@ -165,35 +158,42 @@ class AnimatorActivity : AppCompatActivity() {
                     } else {
                         viewFlipper.postDelayed({
                             // If the back card is displayed, flip to the front card
-                            backCard.animate()
-                                .rotationY(180f)
-                                .setDuration(1000)
-                                .withEndAction {
-                                    backCard.visibility = View.INVISIBLE
-                                    frontCard.visibility = View.VISIBLE
-                                    frontCard.rotationY = 0f
-                                    viewFlipper.displayedChild = 0
-                                }
+                            esconderCard(frontCard, backCard, viewFlipper)
 
-                            lastBack?.animate()
-                                ?.rotationY(180f)
-                                ?.setDuration(1000)
-                                ?.withEndAction {
-                                    lastBack!!.visibility = View.INVISIBLE
-                                    lastFront!!.visibility = View.VISIBLE
-                                    lastFront!!.rotationY = 0f
-                                    lastFlippedView?.displayedChild = 0
-                                    lastFlippedView = null
-                                }
+                            esconderCard(this.lastFront, this.lastBack, this.lastFlippedView)
+
+                            this.lastFlippedView = null
+                            this.lastFront = null
+                            this.lastBack = null
                         }, 1000) // Delay to allow the user to see the cards
                     }
-
-                    /*lastFlippedView = null
-                    lastFront = null
-                    lastBack = null*/
                 }
             }
         }
+    }
+
+    private fun abrirCard(frontCard: CardView, backCard: CardView, viewFlipper: ViewFlipper) {
+        frontCard.animate()
+            .rotationY(180f)
+            .setDuration(1000)
+            .withEndAction {
+                frontCard.visibility = View.INVISIBLE
+                backCard.visibility = View.VISIBLE
+                backCard.rotationY = 0f
+                viewFlipper.displayedChild = 1
+            }
+    }
+
+    private fun esconderCard(frontCard: CardView?, backCard: CardView?, viewFlipper: ViewFlipper?) {
+        backCard?.animate()
+            ?.rotationY(180f)
+            ?.setDuration(1000)
+            ?.withEndAction {
+                backCard.visibility = View.INVISIBLE
+                frontCard!!.visibility = View.VISIBLE
+                frontCard.rotationY = 0f
+                viewFlipper?.displayedChild = 0
+            }
     }
 
     private fun getRecord() {
