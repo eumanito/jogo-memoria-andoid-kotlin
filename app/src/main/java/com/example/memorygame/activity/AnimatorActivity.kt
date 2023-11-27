@@ -33,6 +33,7 @@ class AnimatorActivity : AppCompatActivity() {
     private lateinit var database: FirebaseFirestore
     private lateinit var gridLayout: GridLayout
     private var lastRecord = ""
+    private var lastImage: String? = null
 
     private val cardPairs = mutableListOf<String>()
     private var lastFlippedView: ViewFlipper? = null
@@ -136,6 +137,7 @@ class AnimatorActivity : AppCompatActivity() {
                         backCard.visibility = View.VISIBLE
                         backCard.rotationY = 0f
                         viewFlipper.displayedChild = 1
+                        lastImage = cardPairs[gridLayout.indexOfChild(viewFlipper)]
                     }
 
                 if (lastFlippedView == null) {
@@ -147,7 +149,7 @@ class AnimatorActivity : AppCompatActivity() {
                 else {
 
                     // Se este é a segundo card virado
-                    if (imageUrl == cardPairs[gridLayout.indexOfChild(viewFlipper) / 2]) {
+                    if (imageUrl == lastImage) {
 
                         // Correspondência encontrada
 
