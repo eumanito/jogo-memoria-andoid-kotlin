@@ -3347,7 +3347,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
-id lastRecordTextView
+id lastTimeTextView
 id layout
 id left
 id leftToRight

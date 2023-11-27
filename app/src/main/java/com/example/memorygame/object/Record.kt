@@ -1,5 +1,5 @@
 package com.example.memorygame.`object`
 
-class Record(var email: String, var tempo: Int, var tempo_string: String) {
-    constructor() : this("", 0,"")
+class Record(var email: String, var tempo: String) {
+    constructor() : this("","")
 }

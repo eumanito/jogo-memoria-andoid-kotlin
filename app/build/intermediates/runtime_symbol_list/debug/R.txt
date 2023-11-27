@@ -3346,7 +3346,7 @@ int id item_touch_helper_previous_elevation 0x7f0a00f1
 int id jumpToEnd 0x7f0a00f2
 int id jumpToStart 0x7f0a00f3
 int id labeled 0x7f0a00f4
-int id lastRecordTextView 0x7f0a00f5
+int id lastTimeTextView 0x7f0a0204
 int id layout 0x7f0a00f6
 int id left 0x7f0a00f7
 int id leftToRight 0x7f0a00f8

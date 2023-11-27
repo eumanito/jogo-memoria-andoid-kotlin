@@ -31,16 +31,14 @@ class AnimatorActivity : AppCompatActivity() {
     private lateinit var stopwatch: Stopwatch
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseFirestore
-    private lateinit var placar: CollectionReference
     private lateinit var gridLayout: GridLayout
-    private var points = 0
-    private var elapsedTime = 0
     private var lastRecord = ""
 
     private val cardPairs = mutableListOf<String>()
     private var lastFlippedView: ViewFlipper? = null
+    private var lastFront: CardView? = null
+    private var lastBack: CardView? = null
     private var matchedPairs = 0
-
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,8 +48,8 @@ class AnimatorActivity : AppCompatActivity() {
         //https://comicvine.gamespot.com/rick-and-morty/4050-81059/characters/
         cardPairs.add("https://i.imgur.com/fITuWTt.png")
         cardPairs.add("https://i.imgur.com/fITuWTt.png")
-        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/6/66303/4472083-vlcsnap-2015-01-31-18h46m55s179.jpg")
-        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/6/66303/4472083-vlcsnap-2015-01-31-18h46m55s179.jpg")
+        cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
+        cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
         cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
         cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
         //cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7975577-squanchy.jpg")
@@ -75,14 +73,11 @@ class AnimatorActivity : AppCompatActivity() {
             createCardView("Card ${i + 1}", cardPairs[i])
         }
 
-        //obterPlacar()
-
         getRecord()
     }
 
     @SuppressLint("SetTextI18n")
     private fun createCardView(cardTitle: String, imageUrl: String) {
-        // Create a new instance of ViewFlipper
         val viewFlipper = ViewFlipper(this)
 
         // Set the width and height to be the same to create a square card
@@ -142,106 +137,62 @@ class AnimatorActivity : AppCompatActivity() {
                         backCard.rotationY = 0f
                         viewFlipper.displayedChild = 1
                     }
-            } else {
-                // Se o card de trás for exibido, vire para o card da frente
-                backCard.animate()
-                    .rotationY(180f)
-                    .setDuration(1000)
-                    .withEndAction {
-                        backCard.visibility = View.INVISIBLE
-                        frontCard.visibility = View.VISIBLE
-                        frontCard.rotationY = 0f
-                        viewFlipper.displayedChild = 0
+
+                if (lastFlippedView == null) {
+                    // Se este é o primeiro card virado
+                    lastFlippedView = viewFlipper
+                    lastFront = frontCard
+                    lastBack = backCard
+                }
+                else {
+
+                    // Se este é a segundo card virado
+                    if (imageUrl == cardPairs[gridLayout.indexOfChild(viewFlipper) / 2]) {
+
+                        // Correspondência encontrada
+
+                        matchedPairs++
+
+                        if (matchedPairs == cardPairs.size / 2) {
+                            // Todas as correspondências foram encontradas - jogo completo
+                            stopwatch.stop()
+                            saveRecord()
+                            Toast.makeText(this, "Você venceu!", Toast.LENGTH_SHORT).show()
+                        }
+
+                    } else {
+                        viewFlipper.postDelayed({
+                            // If the back card is displayed, flip to the front card
+                            backCard.animate()
+                                .rotationY(180f)
+                                .setDuration(1000)
+                                .withEndAction {
+                                    backCard.visibility = View.INVISIBLE
+                                    frontCard.visibility = View.VISIBLE
+                                    frontCard.rotationY = 0f
+                                    viewFlipper.displayedChild = 0
+                                }
+
+                            lastBack?.animate()
+                                ?.rotationY(180f)
+                                ?.setDuration(1000)
+                                ?.withEndAction {
+                                    lastBack!!.visibility = View.INVISIBLE
+                                    lastFront!!.visibility = View.VISIBLE
+                                    lastFront!!.rotationY = 0f
+                                    lastFlippedView?.displayedChild = 0
+                                    lastFlippedView = null
+                                }
+                        }, 1000) // Delay to allow the user to see the cards
                     }
-            }
 
-            if (lastFlippedView == null) {
-                // Se este é o primeiro card virado
-                lastFlippedView = viewFlipper
-            } else {
-                // Se este é a segundo card virado
-                if (imageUrl == cardPairs[gridLayout.indexOfChild(viewFlipper) / 2]) {
-
-                    // Correspondência encontrada
-
-                    /*val pointTextView = findViewById<TextView>(id.pointTextView)
-                    val pts = this.points + 1
-                    pointTextView.text = "Pontos: $pts"
-                    this.points = pts
-                    gravarPlacar()*/
-
-                    matchedPairs++
-                    if (matchedPairs == cardPairs.size / 2) {
-                        // Todas as correspondências foram encontradas - jogo completo
-                        stopwatch.stop()
-                        saveRecord()
-                        Toast.makeText(this, "Você venceu!", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    // Não há correspondência, vira os cards de volta
-                    viewFlipper.postDelayed({
-                        viewFlipper.displayedChild = 0
-                        lastFlippedView?.displayedChild = 0
-                        lastFlippedView = null
-                    }, 2000)
+                    /*lastFlippedView = null
+                    lastFront = null
+                    lastBack = null*/
                 }
             }
         }
     }
-
-    /*private fun obterPlacar() {
-        placar = database.collection("placar")
-        auth = Firebase.auth
-        val user = auth.currentUser
-
-        if (user != null) {
-            placar.document(user.email!!).get().addOnSuccessListener { documento ->
-                if (documento != null && documento.exists()) {
-                    val placar = documento.toObject(Placar::class.java)
-                    this.points = placar?.pontuacao!!
-
-                    val pointTextView = findViewById<TextView>(R.id.pointTextView)
-                    val pts = this.points
-                    this.points = pts
-                    val pointText = "Point: $pts"
-                    pointTextView.text = pointText
-
-                } else {
-                    Toast.makeText(
-                        baseContext,
-                        "Erro ao ler o documento, ele não existe ou está vazio",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }.addOnFailureListener { error ->
-                Toast.makeText(
-                    baseContext,
-                    "Erro ao ler Dados do Servidor: ${error.message.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-    }
-
-    private fun gravarPlacar() {
-        auth = Firebase.auth
-        val user = auth.currentUser
-
-        if (user != null) {
-            val pontuacao = Placar(user.email!!, this.points)
-            placar = database.collection("placar")
-            placar.document(user.email!!).set(pontuacao).addOnSuccessListener {
-                Toast.makeText(baseContext, "Sucesso ao gravar dados", Toast.LENGTH_SHORT)
-                    .show()
-            }.addOnFailureListener { error ->
-                Toast.makeText(
-                    baseContext,
-                    "Erro ao gravar dados: ${error.message.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-    }*/
 
     private fun getRecord() {
         val recordCollection = database.collection("Record")
@@ -253,8 +204,8 @@ class AnimatorActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val recordObject = documento.toObject(Record::class.java)
                     this.lastRecord = recordObject?.tempo.toString()
-                    val lastRecordTextView = findViewById<TextView>(R.id.lastRecordTextView)
-                    val text = "Seu Record: $lastRecord"
+                    val lastRecordTextView = findViewById<TextView>(R.id.lastTimeTextView)
+                    val text = "Ultimo tempo: $lastRecord"
                     lastRecordTextView.text = text
                 } else {
                     Log.e("record","Erro ao ler o documento, ele não existe ou está vazio")
@@ -269,8 +220,8 @@ class AnimatorActivity : AppCompatActivity() {
         val user = auth.currentUser
 
         if (user != null) {
-            timeTextView = findViewById(id.timeView)
-            val recordObject = Record(user.email!!, this.elapsedTime, timeTextView.text.toString())
+            timeTextView = findViewById(id.lastTimeTextView)
+            val recordObject = Record(user.email!!, timeTextView.text.toString())
             val recordCollection = database.collection("Record")
             recordCollection.document(user.email!!).set(recordObject).addOnSuccessListener {
                 Log.i("record", "Record gravado com sucesso")
