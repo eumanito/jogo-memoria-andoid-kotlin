@@ -31,6 +31,8 @@ id gridLayout
 id lastTimeTextView
 id singUp
 id textSignUp
+id textViewActiveUser
+id textViewLogOut
 id timeView
 layout activity_login
 layout activity_signup

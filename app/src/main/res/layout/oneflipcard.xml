@@ -8,9 +8,43 @@
     tools:context=".activity.AnimatorActivity">
 
     <TextView
+        android:id="@+id/textViewActiveUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="mail@mail.com"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="logOut"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Sair"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/timeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="0:00:00"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/gridLayout"
@@ -21,8 +55,8 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="407dp"
-        android:layout_height="542dp"
+        android:layout_width="303dp"
+        android:layout_height="531dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:columnCount="2"

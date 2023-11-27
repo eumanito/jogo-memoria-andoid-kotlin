@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlin.math.sign
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -38,21 +39,29 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun signIn(v: View?) {
-        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Log.d("LOGIN", "Login ok")
-                    val user = auth.currentUser
-                    this.loginAnimator(v)
-                } else {
-                    Log.w("LOGIN", "Erro no Login", task.exception)
-                    Toast.makeText(
+        if (!email.text.toString().isEmpty() || !password.text.toString().isEmpty()) {
+            auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Log.d("LOGIN", "Login ok")
+                        val user = auth.currentUser
+                        this.loginAnimator(v)
+                    } else {
+                        Log.w("LOGIN", "Erro no Login", task.exception)
+                        Toast.makeText(
                             baseContext,
                             "Authenticação falhou.",
                             Toast.LENGTH_SHORT
-                    ).show()
+                        ).show()
+                    }
                 }
-            }
+        } else {
+            Toast.makeText(
+                baseContext,
+                "Informe o e-mail e a senha",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     fun logOut(v: View?) {

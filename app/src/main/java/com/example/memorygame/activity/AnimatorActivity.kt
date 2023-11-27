@@ -69,6 +69,11 @@ class AnimatorActivity : AppCompatActivity() {
             createCardView("Card ${i + 1}", cardPairs[i])
         }
 
+        auth = Firebase.auth
+        val user = auth.currentUser
+        val textViewActiveUser = findViewById<TextView>(R.id.textViewActiveUser)
+        textViewActiveUser.text = user!!.email
+
         getRecord()
     }
 
@@ -206,9 +211,11 @@ class AnimatorActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val recordObject = documento.toObject(Record::class.java)
                     this.lastRecord = recordObject?.tempo.toString()
-                    val lastRecordTextView = findViewById<TextView>(R.id.lastTimeTextView)
-                    val text = "Ultimo tempo: $lastRecord"
-                    lastRecordTextView.text = text
+                    if (this.lastRecord != "0:00:00") {
+                        val lastRecordTextView = findViewById<TextView>(R.id.lastTimeTextView)
+                        val text = "Último tempo: $lastRecord"
+                        lastRecordTextView.text = text
+                    }
                 } else {
                     Log.e("record","Erro ao ler o documento, ele não existe ou está vazio")
                 }
@@ -222,7 +229,7 @@ class AnimatorActivity : AppCompatActivity() {
         val user = auth.currentUser
 
         if (user != null) {
-            timeTextView = findViewById(id.lastTimeTextView)
+            timeTextView = findViewById(id.timeView)
             val recordObject = Record(user.email!!, timeTextView.text.toString())
             val recordCollection = database.collection("Record")
             recordCollection.document(user.email!!).set(recordObject).addOnSuccessListener {
