@@ -44,40 +44,49 @@
         android:id="@+id/timeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="0:00:00"
-        android:textSize="40sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewActiveUser"
         app:layout_constraintVertical_bias="0.05" />
 
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="303dp"
         android:layout_height="531dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         android:columnCount="2"
         android:rowCount="3"
-        app:layout_constraintBottom_toTopOf="@id/lastTimeTextView"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timeView"
-        app:layout_constraintVertical_bias="0.2"></GridLayout>
+        app:layout_constraintTop_toBottomOf="@id/timeView"></GridLayout>
 
-    <TextView
-        android:id="@+id/lastTimeTextView"
+    <Button
+        android:id="@+id/playAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="24sp"
+        android:layout_marginTop="8dp"
+        android:onClick="playAgain"
+        android:text="Jogar novamente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gridLayout"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.05"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/lastTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playAgain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

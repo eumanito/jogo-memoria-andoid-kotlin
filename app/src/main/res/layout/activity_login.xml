@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
         android:text="Acesso restrito"
+        android:textColor="#8B34AA"
         android:textSize="30dp" />
 
     <EditText

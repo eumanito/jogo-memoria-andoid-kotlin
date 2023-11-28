@@ -3,26 +3,29 @@ package com.example.memorygame.activity
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.View
+import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.ViewFlipper
-import androidx.cardview.widget.CardView
 import android.widget.Toast
+import android.widget.ViewFlipper
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.example.memorygame.R
 import com.example.memorygame.R.*
-import com.squareup.picasso.Picasso
 import com.example.memorygame.`object`.Record
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
+
 
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
@@ -33,6 +36,8 @@ class AnimatorActivity : AppCompatActivity() {
     private var lastRecord = ""
     private var lastImage: String? = null
 
+    private var bundle: Bundle? = null
+
     private val cardPairs = mutableListOf<String>()
     private var lastFlippedView: ViewFlipper? = null
     private var lastFront: CardView? = null
@@ -41,6 +46,7 @@ class AnimatorActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+        bundle = savedInstanceState
         super.onCreate(savedInstanceState)
         setContentView(layout.oneflipcard)
 
@@ -115,6 +121,8 @@ class AnimatorActivity : AppCompatActivity() {
         viewFlipper.addView(frontCard)
         viewFlipper.addView(backCard)
 
+       //viewFlipper.getChildAt(0).
+
         gridLayout.addView(viewFlipper)
 
         AnimatorInflater.loadAnimator(
@@ -158,6 +166,9 @@ class AnimatorActivity : AppCompatActivity() {
                             stopwatch.stop()
                             saveRecord()
                             Toast.makeText(this, "Você venceu!", Toast.LENGTH_SHORT).show()
+
+                            val playAgainButton = findViewById<Button>(com.example.memorygame.R.id.playAgain)
+                            playAgainButton.visibility = View.VISIBLE
                         }
 
                     } else {
@@ -213,7 +224,7 @@ class AnimatorActivity : AppCompatActivity() {
                     this.lastRecord = recordObject?.tempo.toString()
                     if (this.lastRecord != "0:00:00") {
                         val lastRecordTextView = findViewById<TextView>(R.id.lastTimeTextView)
-                        val text = "Último tempo: $lastRecord"
+                        val text = "Seu Record: $lastRecord"
                         lastRecordTextView.text = text
                     }
                 } else {
@@ -239,5 +250,11 @@ class AnimatorActivity : AppCompatActivity() {
             }
         }
     }
-}
 
+    fun playAgain() {
+        val intent = Intent(this, AnimatorActivity::class.java)
+        startActivity(intent)
+        onCreate(bundle)
+        //finish()
+    }
+}

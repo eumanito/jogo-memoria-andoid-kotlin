@@ -29,6 +29,7 @@ id editTextPassWord
 id editTextPassWordLogin
 id gridLayout
 id lastTimeTextView
+id playAgain
 id singUp
 id textSignUp
 id textViewActiveUser

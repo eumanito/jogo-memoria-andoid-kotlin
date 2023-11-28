@@ -11,7 +11,6 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlin.math.sign
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -27,12 +26,12 @@ class LoginActivity : AppCompatActivity() {
         password = findViewById(R.id.editTextPassWordLogin)
     }
 
-    fun signUp(view: View?) {
+    fun signUp() {
         Intent(this, SignUpActivity::class.java).also {
             startActivity(it)
         }
     }
-    fun loginAnimator(view: View?) {
+    fun loginAnimator() {
         Intent(this, AnimatorActivity::class.java).also {
             startActivity(it)
         }
@@ -44,8 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Log.d("LOGIN", "Login ok")
-                        val user = auth.currentUser
-                        this.loginAnimator(v)
+                        this.loginAnimator()
                     } else {
                         Log.w("LOGIN", "Erro no Login", task.exception)
                         Toast.makeText(
@@ -64,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun logOut(v: View?) {
+    fun logOut() {
         Firebase.auth.signOut()
         Intent(this, LoginActivity::class.java).also {
             startActivity(it)
