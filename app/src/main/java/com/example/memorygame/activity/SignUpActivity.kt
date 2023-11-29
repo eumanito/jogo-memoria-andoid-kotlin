@@ -11,6 +11,7 @@ import com.example.memorygame.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import android.os.Handler
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -30,23 +31,23 @@ class SignUpActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
                     Toast.makeText(
-                            baseContext,
-                            "Cadastrado! Redirecionando...",
-                            Toast.LENGTH_SHORT
+                        baseContext,
+                        "Cadastrado! Redirecionando...",
+                        Toast.LENGTH_SHORT
                     ).show()
 
                     Thread.sleep(2000)
 
-                    Intent(this, LoginActivity::class.java).also {
+                    Intent(this, AnimatorActivity::class.java).also {
                         startActivity(it)
                     }
+
                 } else {
                     Toast.makeText(
-                            baseContext,
-                            "Cadastro falhou.",
-                            Toast.LENGTH_SHORT
+                        baseContext,
+                        "Cadastro falhou.",
+                        Toast.LENGTH_SHORT
                     ).show()
                     Log.w("CADASTRO", "createUserWithEmail:failure", task.exception)
                 }

@@ -17,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
+        android:textColor="#8B34AA"
         android:text="Formulário de Cadastro"
         android:textSize="24sp" />
 

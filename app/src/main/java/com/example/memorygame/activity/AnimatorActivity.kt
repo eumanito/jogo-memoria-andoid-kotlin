@@ -26,7 +26,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
-
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
     private lateinit var stopwatch: Stopwatch
@@ -62,15 +61,13 @@ class AnimatorActivity : AppCompatActivity() {
 
         database = FirebaseFirestore.getInstance()
 
-        // Inicializa views
         timeTextView = findViewById(id.timeView)
         stopwatch = Stopwatch(timeTextView)
         stopwatch.start()
 
-        // Initialize the GridLayout
         gridLayout = findViewById(id.gridLayout)
 
-        // Cria card views
+        // Cria os cards
         for (i in 0 until cardPairs.size) {
             createCardView("Card ${i + 1}", cardPairs[i])
         }
@@ -87,7 +84,6 @@ class AnimatorActivity : AppCompatActivity() {
     private fun createCardView(cardTitle: String, imageUrl: String) {
         val viewFlipper = ViewFlipper(this)
 
-        // Set the width and height to be the same to create a square card
         val cardSize = resources.getDimensionPixelSize(dimen.card_size)
         val layoutParams = GridLayout.LayoutParams()
         layoutParams.width = cardSize
@@ -100,6 +96,7 @@ class AnimatorActivity : AppCompatActivity() {
         frontCard.useCompatPadding = true
         frontCard.setCardBackgroundColor(Color.parseColor("#263238")) // front card color
 
+        // Configura frente do card
         val frontTextView = TextView(this)
         frontTextView.text = cardTitle
         frontTextView.textSize = 14f
@@ -107,52 +104,50 @@ class AnimatorActivity : AppCompatActivity() {
         frontTextView.setTextColor(Color.WHITE)
         frontCard.addView(frontTextView)
 
-        // Set up back card
+        // Configura atrás do card
         val backCard = CardView(this)
         backCard.radius = resources.getDimension(dimen.card_corner_radius)
         backCard.useCompatPadding = true
-        backCard.setCardBackgroundColor(Color.parseColor("#A7CB54")) // back card color
-        backCard.visibility = View.INVISIBLE // Initially hide the back card
+        backCard.setCardBackgroundColor(Color.parseColor("#A7CB54"))
+        backCard.visibility = View.INVISIBLE
 
+        // Configura imagem atrás do card
         val imageView = ImageView(this);
         Picasso.with(this).load(imageUrl).into(imageView)
-
         backCard.addView(imageView)
+
+        // Adiciona os dois lados no viewFlipper
         viewFlipper.addView(frontCard)
         viewFlipper.addView(backCard)
 
-       //viewFlipper.getChildAt(0).
-
+        // Adiciona card montado ao grid
         gridLayout.addView(viewFlipper)
 
         AnimatorInflater.loadAnimator(
             applicationContext,
             animator.frontanimator
         ) as AnimatorSet
+
         AnimatorInflater.loadAnimator(
             applicationContext,
             animator.backanimator
         ) as AnimatorSet
 
         viewFlipper.setOnClickListener {
-            if (viewFlipper.displayedChild == 0) {
-                // Se o card da frente for exibido, vire para o card de trás
 
-                abrirCard(frontCard, backCard, viewFlipper)
+            if (viewFlipper.displayedChild == 0) { // card não revelado
 
-                if (this.lastFlippedView == null) {
-                    // Se este é o primeiro card virado
+                showCard(viewFlipper)
+
+                if (this.lastFlippedView == null) { // se for 1º da jogada
                     this.lastImage = this.cardPairs[this.gridLayout.indexOfChild(viewFlipper)]
                     this.lastFlippedView = viewFlipper
                     this.lastFront = frontCard
                     this.lastBack = backCard
-                }
-                else {
 
-                    // Se este é a segundo card virado
-                    if (imageUrl == this.lastImage) {
+                } else { // se for 2º da jogada
 
-                        // Correspondência encontrada
+                    if (imageUrl == this.lastImage) { // acertou
 
                         matchedPairs++
 
@@ -161,34 +156,30 @@ class AnimatorActivity : AppCompatActivity() {
                         this.lastFront = null
                         this.lastBack = null
 
-                        if (matchedPairs == cardPairs.size / 2) {
-                            // Todas as correspondências foram encontradas - jogo completo
+                        if (matchedPairs == cardPairs.size / 2) { // acertou todos - fim
                             stopwatch.stop()
                             saveRecord()
                             Toast.makeText(this, "Você venceu!", Toast.LENGTH_SHORT).show()
 
-                            val playAgainButton = findViewById<Button>(com.example.memorygame.R.id.playAgain)
+                            val playAgainButton = findViewById<Button>(id.playAgain)
                             playAgainButton.visibility = View.VISIBLE
                         }
 
-                    } else {
+                    } else {  // não acertou
                         viewFlipper.postDelayed({
-                            // If the back card is displayed, flip to the front card
-                            esconderCard(frontCard, backCard, viewFlipper)
-
-                            esconderCard(this.lastFront, this.lastBack, this.lastFlippedView)
-
-                            this.lastFlippedView = null
-                            this.lastFront = null
-                            this.lastBack = null
-                        }, 1000) // Delay to allow the user to see the cards
+                            hideCard(viewFlipper)
+                            hideCard(lastFlippedView as ViewFlipper)
+                            lastFlippedView = null
+                        }, 1000)
                     }
                 }
             }
         }
     }
 
-    private fun abrirCard(frontCard: CardView, backCard: CardView, viewFlipper: ViewFlipper) {
+    private fun showCard(viewFlipper: ViewFlipper) {
+        val frontCard = viewFlipper.getChildAt(0) as CardView
+        val backCard = viewFlipper.getChildAt(1) as CardView
         frontCard.animate()
             .rotationY(180f)
             .setDuration(1000)
@@ -200,15 +191,17 @@ class AnimatorActivity : AppCompatActivity() {
             }
     }
 
-    private fun esconderCard(frontCard: CardView?, backCard: CardView?, viewFlipper: ViewFlipper?) {
-        backCard?.animate()
+    private fun hideCard(viewFlipper: ViewFlipper) {
+        val frontCard = viewFlipper.getChildAt(0) as CardView
+        val backCard = viewFlipper.getChildAt(1) as CardView
+        backCard.animate()
             ?.rotationY(180f)
             ?.setDuration(1000)
             ?.withEndAction {
                 backCard.visibility = View.INVISIBLE
-                frontCard!!.visibility = View.VISIBLE
+                frontCard.visibility = View.VISIBLE
                 frontCard.rotationY = 0f
-                viewFlipper?.displayedChild = 0
+                viewFlipper.displayedChild = 0
             }
     }
 

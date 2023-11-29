@@ -26,12 +26,12 @@ class LoginActivity : AppCompatActivity() {
         password = findViewById(R.id.editTextPassWordLogin)
     }
 
-    fun signUp() {
+    fun signUp(view: View?) {
         Intent(this, SignUpActivity::class.java).also {
             startActivity(it)
         }
     }
-    fun loginAnimator() {
+    fun loginAnimator(view: View?) {
         Intent(this, AnimatorActivity::class.java).also {
             startActivity(it)
         }
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Log.d("LOGIN", "Login ok")
-                        this.loginAnimator()
+                        this.loginAnimator(v)
                     } else {
                         Log.w("LOGIN", "Erro no Login", task.exception)
                         Toast.makeText(
