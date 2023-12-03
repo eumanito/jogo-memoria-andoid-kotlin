@@ -27,5 +27,5 @@ data class Location(
 )
 interface CharacterApiService {
     @GET("characters/{id}")
-    suspend fun getCharacter(@Path("id") characterId: Int): Character
+    fun getCharacter(@Path("id") characterId: Int): Character
 }

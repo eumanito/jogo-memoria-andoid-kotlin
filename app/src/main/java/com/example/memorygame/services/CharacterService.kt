@@ -11,7 +11,7 @@ class CharacterService {
 
     private val service = retrofit.create(CharacterApiService::class.java)
 
-    private suspend fun getSingleCharacter(characterId: Int): Character {
+    private  fun getSingleCharacter(characterId: Int): Character {
         return service.getCharacter(characterId)
     }
 
@@ -19,7 +19,7 @@ class CharacterService {
     *
     * Chamar a função getRandomCharacter para pegar os dados do personagem
     * */
-    suspend fun getRandomCharacter(): Character {
+    fun getRandomCharacter(): Character {
         val randomId = (1..42).random()
         return getSingleCharacter(randomId)
     }
