@@ -17,14 +17,17 @@ import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.lifecycleScope
 import com.example.memorygame.R
 import com.example.memorygame.R.*
 import com.example.memorygame.`object`.Record
+import com.example.memorygame.services.CharacterService
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.launch
 
 class AnimatorActivity : AppCompatActivity() {
     private lateinit var timeTextView: TextView
@@ -43,18 +46,27 @@ class AnimatorActivity : AppCompatActivity() {
     private var lastBack: CardView? = null
     private var matchedPairs = 0
 
+    private val characterService = CharacterService()
+    private var image1: String = "https://i.imgur.com/fITuWTt.png"
+    private var image2: String = "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    private var image3: String = "https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg"
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         bundle = savedInstanceState
         super.onCreate(savedInstanceState)
         setContentView(layout.oneflipcard)
 
-        cardPairs.add("https://i.imgur.com/fITuWTt.png")
-        cardPairs.add("https://i.imgur.com/fITuWTt.png")
-        cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
-        cardPairs.add("https://rickandmortyapi.com/api/character/avatar/2.jpeg")
-        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
-        cardPairs.add("https://comicvine.gamespot.com/a/uploads/scale_small/11/110802/7976283-brad.jpg")
+        lifecycleScope.launch {
+            setImage()
+        }
+
+        cardPairs.add(image1)
+        cardPairs.add(image1)
+        cardPairs.add(image2)
+        cardPairs.add(image2)
+        cardPairs.add(image3)
+        cardPairs.add(image3)
 
         // Embaralhar os cards
         cardPairs.shuffle()
@@ -249,5 +261,15 @@ class AnimatorActivity : AppCompatActivity() {
         startActivity(intent)
         onCreate(bundle)
         //finish()
+    }
+
+    private suspend fun getImageCharacter(): String {
+        return characterService.getRandomCharacterImage()
+    }
+
+    private suspend fun setImage() {
+        image1 = getImageCharacter()
+        image2 = getImageCharacter()
+        image3 = getImageCharacter()
     }
 }

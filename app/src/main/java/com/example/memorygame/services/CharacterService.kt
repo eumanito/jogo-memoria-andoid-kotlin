@@ -19,8 +19,13 @@ class CharacterService {
     *
     * Chamar a função getRandomCharacter para pegar os dados do personagem
     * */
-    suspend fun getRandomCharacter(): Character {
+    private suspend fun getRandomCharacter(): Character {
         val randomId = (1..42).random()
         return getSingleCharacter(randomId)
+    }
+
+    suspend fun getRandomCharacterImage(): String {
+        val randomCharacter = getRandomCharacter()
+        return randomCharacter.image
     }
 }
