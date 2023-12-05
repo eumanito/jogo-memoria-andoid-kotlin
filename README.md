@@ -1,11 +1,14 @@
 
 # Jogo da Memória
-versão 1.0 - 30/10/2023
+versão 1.0 - 04/12/2023
 
-# Missão
-Criar aplicativo Android com jogo da memória com 3 fases de dificuldade.
+# Descrição
+Criar aplicativo para funcionar como um jogo da memória utilizando cartões com imagens de personagens do desenho animado Rick and Morty.
+Trabalho desenvolvido na disciplina de programação de aplicativos móveis.
 
-# Requistos
+# Integrantes
+Jailson Maciel
+Gabriel da Silva Machado
 
 # Etapa 1 - Autenticação
 * Login com usuário e senha
