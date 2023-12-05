@@ -7,8 +7,8 @@ Criar aplicativo para funcionar como um jogo da memória utilizando cartões com
 Trabalho desenvolvido na disciplina de programação de aplicativos móveis.
 
 # Integrantes
-Jailson Maciel
-Gabriel da Silva Machado
+* Jailson Maciel
+* Gabriel da Silva Machado
 
 # Etapa 1 - Autenticação
 * Login com usuário e senha
