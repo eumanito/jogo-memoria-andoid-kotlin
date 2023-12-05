@@ -23,33 +23,10 @@ Criar aplicativo Android com jogo da memória com 3 fases de dificuldade.
 * Criar lógica randômica para carregar os caracteres (1 até 42)
 
 # Etapa 4 - Montagem da tela do jogo
-* Criar fase 1 - 2 personagens duplicados = 4 cards
+* Criar fase 1 - 3 personagens duplicados = 6 cards
 
 # Etapa 5 - Criar lógica do jogo
-* ToDo
+* Ler lista de caracteres, embaralhar e montar cards duplicados
 
 # Etapa 6 - Armazenar resultado do jogo
-* ToDo
-
-# Etapa 7 - Exibir ranking dos resultados
-* ToDo
-
-E para cada requisito poderá ter os itens abaixo:
-
-# Use cases
-Preencher com os casos de uso do sistema, ou como ele irá usar o sistema e os atores que irão atuar. Ex: Cliente clica em incluir novo registro. Cliente preenche cadastro e clica em salvar.
-
-# Regras de Negócio
-Indica quais validações e cálculos que devem ser impostas.
-
-# Modelos de interface de usuário
-Telas que  serão implementadas ou alteradas.
-
-# Modelos de dados
-Tabelas de dados que serão implementadas ou alteradas.
-
-# Modelos de classes
-Classes e objetos internos do sistema, quando for necessário descrever.
-
-# Testes
-Como serão efetuados as verificações neste projeto. Devem estar diretamente relacionadas com os requisitos. Se possível usa
+* Ao finalizar o jogo, armazenar o tempo decorrido no Firebase
